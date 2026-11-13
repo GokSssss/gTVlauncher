@@ -1,0 +1,17 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS physical host endpoint reachable before fixture VPN
+PASS own disposable VPN is active for phone UID
+PASS default socket is blocked by black-hole VPN
+PASS matching physical prefix chosen over unrelated VPN hint
+java.net.SocketException: Binding socket to network 101 failed: EPERM (Operation not permitted)
+	at android.net.Network.bindSocket(Network.java:404)
+	at android.net.Network.bindSocket(Network.java:372)
+	at android.net.Network$NetworkBoundSocketFactory.createSocket(Network.java:246)
+	at ru.truetv.bridge.Transfer$Sender.send(Transfer.java:36)
+	at ru.truetv.launcher.LanVpnCheck.onStart(LanVpnCheck.java:9)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Caused by: android.system.ErrnoException: Binding socket to network 101 failed: EPERM (Operation not permitted)
+	at android.net.Network.bindSocket(Network.java:403)
+	... 5 more
+Checks=4
+INSTRUMENTATION_CODE: 0

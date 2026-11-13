@@ -1,0 +1,74 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS both screen-selection settings are present
+PASS screen settings stay together; obsolete Wi-Fi name permission row is removed
+PASS fixture endpoint is a genuinely accessible system Activity
+PASS settings opens dedicated Wi-Fi chooser
+PASS await condition
+PASS chooser uses correct independent mode
+PASS real public system candidates discovered before fixture injection
+PASS mode button visibly changes background and text when focus moves
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Choose another restores last tested row and viewport in Wi-Fi
+PASS unsuccessful candidate is not saved
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Back dismissing confirmation preserves the same row
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS only explicitly confirmed Wi-Fi route saved
+PASS other radio's route remains unchanged
+PASS settings opens dedicated Bluetooth chooser
+PASS await condition
+PASS chooser uses correct independent mode
+PASS real public system candidates discovered before fixture injection
+PASS mode button visibly changes background and text when focus moves
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Choose another restores last tested row and viewport in Bluetooth
+PASS unsuccessful candidate is not saved
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Back dismissing confirmation preserves the same row
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS only explicitly confirmed Bluetooth route saved
+PASS other radio's route remains unchanged
+PASS await condition
+PASS header launches exact saved Wi-Fi Intent
+PASS header launches exact saved Bluetooth Intent
+PASS short OK opens chooser for Wi-Fi when route is unset
+PASS fallback chooser uses the requested radio mode
+PASS await condition
+PASS short OK opens chooser for Wi-Fi when route is stale
+PASS fallback chooser uses the requested radio mode
+PASS unavailable saved route is preserved until explicit replacement
+PASS await condition
+PASS short OK opens chooser for Bluetooth when route is unset
+PASS fallback chooser uses the requested radio mode
+PASS await condition
+PASS short OK opens chooser for Bluetooth when route is stale
+PASS fallback chooser uses the requested radio mode
+PASS unavailable saved route is preserved until explicit replacement
+PASS await condition
+PASS legacy private Bluetooth component still opens after upgrade
+PASS legacy alias retains Bluetooth mode
+Checks=71
+INSTRUMENTATION_CODE: -1

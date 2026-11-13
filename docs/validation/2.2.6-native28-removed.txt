@@ -1,0 +1,26 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS await condition
+PASS await condition
+PASS already missing package from old launcher becomes a real empty slot
+PASS installed package without launcher Activity remains pinned
+PASS stale missing tile is visually bound as plus
+PASS installed fixture preserved
+PASS actual disable succeeds
+PASS await condition
+PASS disabled package keeps visible and offscreen assignments
+PASS fixture enabled again
+PASS await condition
+PASS actual APK replacement succeeds
+PASS await condition
+PASS replacement broadcasts do not clear any duplicate/offscreen pins
+PASS actual package uninstall succeeds
+PASS await condition
+PASS await condition
+PASS uninstall refreshes existing tiles without recreating desktop
+PASS uninstalled package is removed from live catalog immediately
+PASS uninstall does not remove another app's assignment
+PASS former ghost slot now opens Add app instead of old package info
+PASS unrelated uninstall changes no slots
+PASS unrelated uninstall does not bump desktop revision
+Checks=23
+INSTRUMENTATION_CODE: -1

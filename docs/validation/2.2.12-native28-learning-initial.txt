@@ -1,0 +1,73 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS service declares Back-filter capability
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS Back filter is armed only for explicit capture
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS recording stops without saving a route
+PASS capture does not alter the other radio route
+PASS Home offers Test captured screen, manual choice and Cancel
+PASS test opens the dedicated route verifier
+PASS await condition
+PASS trial screen runs after observation and Back filtering have stopped
+PASS await condition
+PASS trial return asks whether the correct screen opened
+PASS await condition
+PASS Choose another rejects the captured route without saving
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS Back filter is armed only for explicit capture
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS recording stops without saving a route
+PASS capture does not alter the other radio route
+PASS Home offers Test captured screen, manual choice and Cancel
+PASS test opens the dedicated route verifier
+PASS await condition
+PASS trial screen runs after observation and Back filtering have stopped
+PASS await condition
+PASS trial return asks whether the correct screen opened
+PASS await condition
+PASS explicit confirmation saves the captured accessible system Activity
+PASS stored route retains the requested public Wi-Fi or Bluetooth action
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS Back filter is armed only for explicit capture
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS recording stops without saving a route
+PASS capture does not alter the other radio route
+PASS Home offers Test captured screen, manual choice and Cancel
+PASS test opens the dedicated route verifier
+PASS await condition
+PASS trial screen runs after observation and Back filtering have stopped
+PASS await condition
+PASS trial return asks whether the correct screen opened
+PASS await condition
+PASS explicit confirmation saves the captured accessible system Activity
+PASS stored route retains the requested public Wi-Fi or Bluetooth action
+PASS capture stops all window observation and Back filtering
+PASS await condition
+FAIL await condition
+DIAG seen=null candidate=null info=eventTypes:[], packageNames:[ru.truetv.launcher], feedbackTypes:[[FEEDBACK_GENERIC]], notificationTimeout: 100, flags:[FLAG_REPORT_VIEW_IDS], id: ru.truetv.launcher/.ControlService, resolveInfo: ResolveInfo{a0d8211 ru.truetv.launcher/.ControlService m=0x108000}, settingsActivityName: ru.truetv.launcher.SettingsActivity, summary: null, capabilities:[CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT, CAPABILITY_CAN_REQUEST_FILTER_KEY_EVENTS]
+java.lang.AssertionError: await condition
+	at ru.truetv.launcher.ScreenLearningCheck.check(ScreenLearningCheck.java:6)
+	at ru.truetv.launcher.ScreenLearningCheck.until(ScreenLearningCheck.java:6)
+	at ru.truetv.launcher.ScreenLearningCheck.onStart(ScreenLearningCheck.java:10)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Checks=64
+INSTRUMENTATION_CODE: 0

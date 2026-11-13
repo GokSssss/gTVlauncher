@@ -11,17 +11,20 @@ import java.util.*;
 
 /** Explicit bounded operations; observes Settings for selected force-stop or system power UI for a requested power action. */
 public final class ControlService extends AccessibilityService {
-    private static ControlService instance;private PowerOperation powerOperation;
+    private static ControlService instance;private PowerOperation powerOperation;private ScreenLearning learning;
     private final Handler main=new Handler(Looper.getMainLooper());
     private String target, label, settingsPackage;private boolean restart,identity,pressed;private long deadline,pressedAt;private Intent back;
     public static ControlService connected(){return instance;}
-    protected void onServiceConnected(){instance=this;powerOperation=new PowerOperation(this,this::idle);idle();Controls.changed();}
-    public boolean onUnbind(Intent i){if(powerOperation!=null)powerOperation.cancel(false);cancel(false);instance=null;Controls.changed();return super.onUnbind(i);}
-    public void onInterrupt(){if(powerOperation!=null)powerOperation.cancel(true);cancel(true);}
-    private void idle(){AccessibilityServiceInfo info=getServiceInfo();if(info!=null){info.eventTypes=0;info.packageNames=new String[]{getPackageName()};info.notificationTimeout=100;setServiceInfo(info);}}
-    public void beginPower(Activity owner,boolean again){if(target!=null||powerOperation==null||powerOperation.active()){Ui.toast(owner,"Служба занята","Service is busy");return;}powerOperation.begin(again);}
+    protected void onServiceConnected(){instance=this;powerOperation=new PowerOperation(this,this::idle);learning=new ScreenLearning(this,this::idle);idle();Controls.changed();}
+    public boolean onUnbind(Intent i){if(learning!=null)learning.cancel();if(powerOperation!=null)powerOperation.cancel(false);cancel(false);instance=null;Controls.changed();return super.onUnbind(i);}
+    public void onInterrupt(){if(learning!=null)learning.cancel();if(powerOperation!=null)powerOperation.cancel(true);cancel(true);}
+    private void idle(){AccessibilityServiceInfo info=getServiceInfo();if(info!=null){info.eventTypes=0;info.flags&=~AccessibilityServiceInfo.FLAG_REQUEST_FILTER_KEY_EVENTS;info.packageNames=new String[]{getPackageName()};info.notificationTimeout=100;setServiceInfo(info);}}
+    public void beginLearning(Activity owner,boolean wifi){if(target!=null||powerOperation!=null&&powerOperation.active()||learning==null||learning.active()){Ui.toast(owner,"Служба занята","Service is busy");return;}learning.begin(owner,wifi);}
+    public boolean finishLearning(){return learning!=null&&learning.finish(false);}
+    protected boolean onKeyEvent(android.view.KeyEvent event){return learning!=null&&learning.key(event);}
+    public void beginPower(Activity owner,boolean again){if(target!=null||learning!=null&&learning.active()||powerOperation==null||powerOperation.active()){Ui.toast(owner,"Служба занята","Service is busy");return;}powerOperation.begin(again);}
     public void begin(Activity owner,String pkg,boolean again){
-        if(target!=null||powerOperation!=null&&powerOperation.active()){Ui.toast(owner,"Служба занята","Service is busy");return;}
+        if(target!=null||learning!=null&&learning.active()||powerOperation!=null&&powerOperation.active()){Ui.toast(owner,"Служба занята","Service is busy");return;}
         Intent details=new Intent("android.settings.APPLICATION_DETAILS_SETTINGS",Uri.parse("package:"+pkg));ResolveInfo handler=getPackageManager().resolveActivity(details,PackageManager.MATCH_DEFAULT_ONLY);
         try{ApplicationInfo app=getPackageManager().getApplicationInfo(pkg,0);if(pkg.equals(getPackageName())||pkg.equals("android")||handler==null||pkg.equals(handler.activityInfo.packageName)){Ui.toast(owner,"Это приложение нельзя остановить из лаунчера","This app cannot be stopped from the launcher");return;}
             target=pkg;label=String.valueOf(getPackageManager().getApplicationLabel(app));settingsPackage=handler.activityInfo.packageName;restart=again;identity=false;pressed=false;deadline=SystemClock.uptimeMillis()+45000;back=owner instanceof HomeActivity?HomeActivity.homeIntent(owner):new Intent(owner,owner.getClass()).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -30,7 +33,7 @@ public final class ControlService extends AccessibilityService {
         }catch(RuntimeException|PackageManager.NameNotFoundException e){cancel(true);}
     }
     private final Runnable poll=new Runnable(){public void run(){step();if(target!=null)main.postDelayed(this,400);}};
-    public void onAccessibilityEvent(AccessibilityEvent e){if(powerOperation!=null&&powerOperation.active())powerOperation.step();else if(target!=null)step();}
+    public void onAccessibilityEvent(AccessibilityEvent e){if(learning!=null&&learning.active()){learning.window(e);return;}String pkg=String.valueOf(e.getPackageName());if(powerOperation!=null&&powerOperation.active()){if(PowerChoice.trusted(pkg))powerOperation.step();}else if(target!=null&&(pkg.equals(settingsPackage)||pkg.equals("android")||pkg.equals(getPackageName())))step();}
     private boolean isStopped(){try{return (getPackageManager().getApplicationInfo(target,0).flags&ApplicationInfo.FLAG_STOPPED)!=0;}catch(PackageManager.NameNotFoundException e){return false;}}
     private void step(){if(target==null)return;if(SystemClock.uptimeMillis()>deadline){cancel(true);return;}if(isStopped()){complete();return;}
         AccessibilityNodeInfo root=getRootInActiveWindow();if(root==null)return;String pkg=String.valueOf(root.getPackageName());if(!pkg.equals(settingsPackage)&&!pkg.equals("android")){root.recycle();if(identity)cancel(true);return;}

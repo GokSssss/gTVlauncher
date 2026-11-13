@@ -1,0 +1,38 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS Wi-Fi remains immediately before Bluetooth
+PASS top glyph enlarged from32 to36dp
+PASS both radio buttons accept long OK
+PASS chosen header item keeps focus after layout
+PASS file-transfer focus explains phone Share and visible receive window
+PASS help fits visible three-line footer
+PASS chosen header item keeps focus after layout
+PASS Bluetooth focus explains selecting/testing/saving a route and long OK
+PASS chosen header item keeps focus after layout
+PASS Wi-Fi focus explains normal and held OK
+PASS chosen header item keeps focus after layout
+PASS other controls have no plain name caption
+PASS leaving header clears help
+PASS await condition
+PASS await condition
+PASS only glyph dims; focusable hit target stays legible
+PASS chosen header item keeps focus after layout
+PASS await condition
+PASS await condition
+PASS actual held OK enables Wi-Fi and refreshes same desktop
+PASS await condition
+PASS await condition
+PASS actual held OK disables Wi-Fi without opening settings
+LIMIT no supported Bluetooth adapter on VM; radio-state rendering tested separately
+PASS both OFF glyphs are dim
+PASS unknown/permission-denied is not falsely shown as OFF
+PASS ON glyphs are bright
+PASS all eight header buttons retain cyclic navigation
+PASS await condition
+PASS chosen header item keeps focus after layout
+PASS real system font scale is enlarged
+PASS help is not vertically clipped at1.4 font scale
+PASS light-theme help uses the selected theme
+Checks=34
+INSTRUMENTATION_CODE: -1

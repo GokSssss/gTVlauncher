@@ -10,6 +10,8 @@ import android.view.View;
 /** Original geometric glyph renderer; no bundled icon/font files. */
 public final class Glyph extends View {
     public final String kind;
+    private int wifiState=RadioControls.ON,wifiConnection=1;
+    public void wifiStatus(int state,int connection){if(wifiState!=state||wifiConnection!=connection){wifiState=state;wifiConnection=connection;invalidate();}}
     private final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
     public Glyph(Context context, String name) { super(context); kind = name; setFocusable(false); setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO); }
     private void line(Canvas c, float x, float y, float ex, float ey) { c.drawLine(x,y,ex,ey,p); }
@@ -25,6 +27,7 @@ public final class Glyph extends View {
             line(c,19,6,19,10);line(c,17,8,21,8);
             c.drawArc(new RectF(6,11,18,23),225,90,false,p);c.drawArc(new RectF(8.5f,13.5f,15.5f,20.5f),225,90,false,p);p.setStyle(Paint.Style.FILL);c.drawCircle(12,17,0.8f,p);
         }
+        else if(kind.equals("wifi")){int alpha=wifiState==RadioControls.OFF||wifiState==RadioControls.ABSENT?89:wifiState==RadioControls.CHANGING?153:255;p.setAlpha(wifiState==RadioControls.ON&&wifiConnection==0?89:alpha);c.drawArc(new RectF(2,4,22,24),225,90,false,p);c.drawArc(new RectF(5,7,19,21),225,90,false,p);c.drawArc(new RectF(8,10,16,18),225,90,false,p);p.setStyle(Paint.Style.FILL);p.setAlpha(alpha);c.drawCircle(12,17,1,p);}
         else if (kind.equals("tune")) { for(int y=6;y<=18;y+=6){line(c,3,y,21,y);p.setStyle(Paint.Style.FILL);c.drawCircle(y==12?16:8,y,2.7f,p);p.setStyle(Paint.Style.STROKE);} }
         else if (kind.equals("settings")) { c.drawCircle(12,12,3.5f,p); Path path=new Path();for(int i=0;i<32;i++){double angle=i*Math.PI/16;float radius=(i%4==1||i%4==2)?9.5f:8f;float x=12+(float)Math.cos(angle)*radius,y=12+(float)Math.sin(angle)*radius;if(i==0)path.moveTo(x,y);else path.lineTo(x,y);}path.close();c.drawPath(path,p); }
         else if (kind.equals("bluetooth")) {line(c,11,2,11,22);line(c,11,2,18,8);line(c,18,8,5,19);line(c,11,22,18,16);line(c,18,16,5,5);}

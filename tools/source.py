@@ -9,6 +9,7 @@ files=[]
 for p in sorted(root.rglob('*')):
  relative=p.relative_to(root)
  if any(part in excluded for part in relative.parts) or not p.is_file():continue
+ if relative.as_posix()=='docs/drive-state.json' or relative.parts[:2]==('docs','owner') or relative.parts[:4]==('modules','file-manager','resources','references'):continue
  if p.is_symlink():raise SystemExit('Unexpected source symlink: '+str(relative))
  if relative.as_posix()=='docs/SOURCE_INPUTS.sha256':continue
  files.append(p)

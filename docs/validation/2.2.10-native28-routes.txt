@@ -1,0 +1,54 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS both screen-selection settings are present
+PASS Wi-Fi, Bluetooth screen selection and Wi-Fi name access are together in Header settings
+PASS fixture endpoint is a genuinely accessible system Activity
+PASS settings opens dedicated Wi-Fi chooser
+PASS await condition
+PASS chooser uses correct independent mode
+PASS real public system candidates discovered before fixture injection
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Choose another restores last tested row and viewport in Wi-Fi
+PASS unsuccessful candidate is not saved
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Back dismissing confirmation preserves the same row
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS only explicitly confirmed Wi-Fi route saved
+PASS other radio's route remains unchanged
+PASS settings opens dedicated Bluetooth chooser
+PASS await condition
+PASS chooser uses correct independent mode
+PASS real public system candidates discovered before fixture injection
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Choose another restores last tested row and viewport in Bluetooth
+PASS unsuccessful candidate is not saved
+PASS await condition
+PASS await condition
+PASS await condition
+PASS Back dismissing confirmation preserves the same row
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS only explicitly confirmed Bluetooth route saved
+PASS other radio's route remains unchanged
+PASS await condition
+PASS header launches exact saved Wi-Fi Intent
+PASS header launches exact saved Bluetooth Intent
+PASS stale saved route does not automatically open the chooser
+PASS failed saved choice is preserved until explicit reconfiguration
+PASS legacy private Bluetooth component still opens after upgrade
+PASS legacy alias retains Bluetooth mode
+Checks=51
+INSTRUMENTATION_CODE: -1

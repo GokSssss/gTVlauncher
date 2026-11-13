@@ -1,0 +1,17 @@
+PORT=42879 PIN=baf42ba040a49300b25f6a5c9dbdfa8d9d25eb4a9d9c712efc62bba8d7e26ca9
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Read timed out
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Remote host terminated the handshake
+FINISHED false 0 · Remote host terminated the handshake
+RECEIVED lan-vpn-0
+FINISHED true 1
+RECEIVED lan-vpn-1
+FINISHED true 1
+RECEIVED lan-vpn-2
+FINISHED true 1
+FINISHED false 0 · Remote host terminated the handshake

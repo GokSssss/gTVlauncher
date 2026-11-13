@@ -24,10 +24,10 @@ public final class AppCatalog {
     public static synchronized AppCatalog get(Context c){if(instance==null)instance=new AppCatalog(c.getApplicationContext());return instance;}
     private final Context context; private final PackageManager pm; private final Handler main=new Handler(Looper.getMainLooper());
     private final ExecutorService work=Executors.newSingleThreadExecutor();private volatile List<Entry> entries=Collections.emptyList();private volatile boolean loaded;
-    private final ArrayList<WeakReference<Listener>> listeners=new ArrayList<>();private long requested;private String language;
+    private final ArrayList<WeakReference<Listener>> listeners=new ArrayList<>();private final HashSet<String> replacing=new HashSet<>();private long requested;private String language;
     private final LruCache<String,Bitmap> icons=new LruCache<String,Bitmap>(6*1024*1024){protected int sizeOf(String key,Bitmap b){return b.getAllocationByteCount();}};
     private AppCatalog(Context c){context=c;pm=c.getPackageManager();language=c.getResources().getConfiguration().locale.toLanguageTag();
-        BroadcastReceiver packages=new BroadcastReceiver(){public void onReceive(Context c,Intent i){reload();}};IntentFilter filter=new IntentFilter();for(String action:new String[]{Intent.ACTION_PACKAGE_ADDED,Intent.ACTION_PACKAGE_REMOVED,Intent.ACTION_PACKAGE_CHANGED,Intent.ACTION_PACKAGE_REPLACED})filter.addAction(action);filter.addDataScheme("package");
+        BroadcastReceiver packages=new BroadcastReceiver(){public void onReceive(Context c,Intent i){String pkg=i.getData()==null?null:i.getData().getSchemeSpecificPart();if(pkg!=null){if(Intent.ACTION_PACKAGE_REMOVED.equals(i.getAction())){if(i.getBooleanExtra(Intent.EXTRA_REPLACING,false))replacing.add(pkg);else{replacing.remove(pkg);new SettingsStore(context).removePackages(Collections.singleton(pkg));ArrayList<Entry> keep=new ArrayList<>();for(Entry e:entries)if(!pkg.equals(e.pkg))keep.add(e);entries=Collections.unmodifiableList(keep);notifyListeners();}}else if(Intent.ACTION_PACKAGE_ADDED.equals(i.getAction())||Intent.ACTION_PACKAGE_REPLACED.equals(i.getAction()))replacing.remove(pkg);}reload();}};IntentFilter filter=new IntentFilter();for(String action:new String[]{Intent.ACTION_PACKAGE_ADDED,Intent.ACTION_PACKAGE_REMOVED,Intent.ACTION_PACKAGE_CHANGED,Intent.ACTION_PACKAGE_REPLACED})filter.addAction(action);filter.addDataScheme("package");
         if(Build.VERSION.SDK_INT>=33)c.registerReceiver(packages,filter,Context.RECEIVER_EXPORTED);else c.registerReceiver(packages,filter);reload();
     }
     public boolean loaded(){return loaded;}
@@ -35,22 +35,28 @@ public final class AppCatalog {
     public Entry find(String pkg){for(Entry e:entries)if(e.pkg.equals(pkg))return e;return null;}
     public void listen(Listener listener){for(WeakReference<Listener> w:listeners)if(w.get()==listener)return;listeners.add(new WeakReference<>(listener));String locale=context.getResources().getConfiguration().locale.toLanguageTag();if(!language.equals(locale)){language=locale;reload();}}
     public void unlisten(Listener listener){for(Iterator<WeakReference<Listener>> it=listeners.iterator();it.hasNext();){Listener v=it.next().get();if(v==null||v==listener)it.remove();}}
-    public void reload(){synchronized(icons){icons.evictAll();}final long ticket=++requested;work.execute(()->{
+    public void reload(){synchronized(icons){icons.evictAll();}final long ticket=++requested;final Set<String> updates=new HashSet<>(replacing);work.execute(()->{
         HashMap<String,ComponentName> tv=new HashMap<>(),mobile=new HashMap<>();
         for(String category:new String[]{Intent.CATEGORY_LEANBACK_LAUNCHER,Intent.CATEGORY_LAUNCHER}){
             Intent query=new Intent(Intent.ACTION_MAIN).addCategory(category);
             for(ResolveInfo item:pm.queryIntentActivities(query,0)){ActivityInfo info=item.activityInfo;if(info!=null&&info.enabled&&info.exported){HashMap<String,ComponentName> map=category.equals(Intent.CATEGORY_LEANBACK_LAUNCHER)?tv:mobile;if(!map.containsKey(info.packageName))map.put(info.packageName,new ComponentName(info.packageName,info.name));}}
         }
-        ArrayList<Entry> next=new ArrayList<>();
+        ArrayList<Entry> next=new ArrayList<>();HashSet<String> installed=new HashSet<>();
         for(ApplicationInfo info:pm.getInstalledApplications(PackageManager.MATCH_DISABLED_COMPONENTS)){
+            if((info.flags&ApplicationInfo.FLAG_INSTALLED)==0)continue;installed.add(info.packageName);
             try{String label=String.valueOf(pm.getApplicationLabel(info));boolean disabled=!info.enabled;int setting=pm.getApplicationEnabledSetting(info.packageName);disabled|=setting==PackageManager.COMPONENT_ENABLED_STATE_DISABLED||setting==PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER||setting==PackageManager.COMPONENT_ENABLED_STATE_DISABLED_UNTIL_USED;
                 ComponentName launch=tv.containsKey(info.packageName)?tv.get(info.packageName):mobile.get(info.packageName);PackageInfo version=pm.getPackageInfo(info.packageName,0);
                 next.add(new Entry(info.packageName,label,(info.flags&(ApplicationInfo.FLAG_SYSTEM|ApplicationInfo.FLAG_UPDATED_SYSTEM_APP))!=0,disabled,disabled?null:launch,version.lastUpdateTime,version.versionName==null?String.valueOf(version.versionCode):version.versionName));
             }catch(RuntimeException|PackageManager.NameNotFoundException ignored){}
         }
+        // Recover old stale pins once a real package scan succeeds. A missing icon/launch Activity
+        // or transient PackageManager error is not proof of uninstall; disabled apps stay pinned.
+        SettingsStore slots=new SettingsStore(context);HashSet<String> removed=new HashSet<>(),checked=new HashSet<>();
+        for(int i=0;i<Choices.MAX_SLOTS;i++){String pkg=slots.slot(i);if(pkg.isEmpty()||installed.contains(pkg)||updates.contains(pkg)||!checked.add(pkg))continue;try{ApplicationInfo info=pm.getApplicationInfo(pkg,PackageManager.MATCH_UNINSTALLED_PACKAGES|PackageManager.MATCH_DISABLED_COMPONENTS);if((info.flags&ApplicationInfo.FLAG_INSTALLED)==0)removed.add(pkg);}catch(PackageManager.NameNotFoundException gone){removed.add(pkg);}catch(RuntimeException unavailable){}}
         java.text.Collator order=java.text.Collator.getInstance(context.getResources().getConfiguration().locale);Collections.sort(next,(a,b)->{int n=order.compare(a.label,b.label);return n!=0?n:a.pkg.compareTo(b.pkg);});
-        main.post(()->{if(ticket!=requested)return;entries=Collections.unmodifiableList(next);loaded=true;for(Iterator<WeakReference<Listener>> it=listeners.iterator();it.hasNext();){Listener l=it.next().get();if(l==null)it.remove();else l.appsChanged();}});
+        main.post(()->{if(ticket!=requested)return;slots.removePackages(removed);entries=Collections.unmodifiableList(next);loaded=true;notifyListeners();});
     });}
+    private void notifyListeners(){for(Iterator<WeakReference<Listener>> it=listeners.iterator();it.hasNext();){Listener l=it.next().get();if(l==null)it.remove();else l.appsChanged();}}
     public List<Entry> filter(String query,boolean system,boolean self){ArrayList<Entry> out=new ArrayList<>();for(Entry e:entries)if((system||!e.system)&&(self||!e.pkg.equals(context.getPackageName()))&&Choices.matches(e.search(),query))out.add(e);return out;}
     public boolean launch(Entry entry){return entry!=null&&entry.launch!=null&&Ui.launch(context,new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER).setComponent(entry.launch).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));}
     public void image(Entry entry,ImageView target){image(entry.pkg,entry.revision,target);}

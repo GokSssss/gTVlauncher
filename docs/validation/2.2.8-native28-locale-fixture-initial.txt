@@ -1,0 +1,34 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS Wi-Fi remains immediately before Bluetooth
+PASS top glyph enlarged from32 to36dp
+PASS both radio buttons accept long OK
+PASS file-transfer focus explains phone Share and visible receive window
+PASS help fits visible three-line footer
+PASS Bluetooth focus explains selecting/testing/saving a route and long OK
+PASS Wi-Fi focus explains normal and held OK
+PASS other controls have no plain name caption
+PASS leaving header clears help
+PASS await condition
+PASS await condition
+PASS only glyph dims; focusable hit target stays legible
+PASS await condition
+PASS await condition
+PASS actual held OK enables Wi-Fi and refreshes same desktop
+PASS await condition
+PASS await condition
+PASS actual held OK disables Wi-Fi without opening settings
+LIMIT no supported Bluetooth adapter on VM; radio-state rendering tested separately
+PASS both OFF glyphs are dim
+PASS unknown/permission-denied is not falsely shown as OFF
+PASS ON glyphs are bright
+PASS all eight header buttons retain cyclic navigation
+PASS await condition
+FAIL Russian Bluetooth help contains real actions with enlarged text
+java.lang.AssertionError: Russian Bluetooth help contains real actions with enlarged text
+	at ru.truetv.launcher.HeaderRadioCheck.check(HeaderRadioCheck.java:6)
+	at ru.truetv.launcher.HeaderRadioCheck.onStart(HeaderRadioCheck.java:12)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Checks=26
+INSTRUMENTATION_CODE: 0

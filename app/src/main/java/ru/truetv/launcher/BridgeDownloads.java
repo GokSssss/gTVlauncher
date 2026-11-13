@@ -12,7 +12,8 @@ final class BridgeDownloads implements Wire.Store {
  interface Published {void saved(Uri uri,String name,String mime);}
  private final Context context;private final SharedPreferences journal;private final Published published;
  BridgeDownloads(Context c)throws IOException {this(c,null);}
- BridgeDownloads(Context c,Published callback)throws IOException {published=callback;context=c.getApplicationContext();journal=c.getSharedPreferences("totv_pending",0);cleanup();}
+ BridgeDownloads(Context c,Published callback)throws IOException {this(c,callback,"totv_pending");}
+ BridgeDownloads(Context c,Published callback,String journalName)throws IOException {published=callback;context=c.getApplicationContext();journal=c.getSharedPreferences(journalName,0);cleanup();}
  private File downloads()throws IOException {File root=Environment.getExternalStorageDirectory().getCanonicalFile(),d=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);if(!d.isDirectory()&&!d.mkdirs())throw new IOException("Downloads unavailable");if(!d.getCanonicalPath().startsWith(root.getPath()+File.separator))throw new IOException("Downloads path escaped shared storage");return d;}
  private void clear(){journal.edit().clear().commit();}
  private void cleanup()throws IOException {String raw=journal.getString("uri",null),path=journal.getString("path",null);if(raw!=null&&Build.VERSION.SDK_INT>=29){Uri u=Uri.parse(raw);if("media".equals(u.getAuthority())&&u.getPath()!=null&&u.getPath().contains("/downloads/"))try(Cursor c=context.getContentResolver().query(u,new String[]{"is_pending"},null,null,null)){if(c!=null&&c.moveToFirst()&&c.getInt(0)==1)context.getContentResolver().delete(u,null,null);}}if(path!=null){File p=new File(path);if(p.getName().startsWith(".ToTV-")&&p.getName().endsWith(".part")&&p.getCanonicalFile().getParentFile().equals(downloads()))p.delete();}clear();}

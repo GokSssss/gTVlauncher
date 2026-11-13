@@ -1,0 +1,9 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS physical host endpoint reachable before fixture VPN
+PASS own disposable VPN is active for phone UID
+PASS default socket is blocked by black-hole VPN
+PASS unrelated VPN address hint is ignored
+POLICY SocketTimeoutException
+PASS blocked VPN remains enforced with default-route fallback; no false success
+Checks=5
+INSTRUMENTATION_CODE: -1

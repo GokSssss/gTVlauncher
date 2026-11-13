@@ -1,0 +1,33 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS desktop contains header, board and version only; both help rows and their reserve are removed
+PASS desktop starts immediately below header
+PASS top glyph size remains36dp
+PASS both radio buttons retain long OK
+PASS removed network-name UI no longer requests Location permissions
+PASS launcher no longer requests obsolete radio-toggle permissions
+PASS await condition
+PASS await condition
+PASS only icon ink dims; focus target remains visible
+PASS Bluetooth long OK shows its header notice
+PASS long-press notice appears directly below system icons, not at screen bottom
+PASS notice does not take remote focus or intercept clicks
+PASS actual held remote OK shows Wi-Fi notice below header
+PASS long OK opens no settings, chooser, enable dialog or other Activity
+PASS long OK changes neither radio state
+PASS enabled unassociated Wi-Fi has a bright dot and dim waves
+PASS Bluetooth OFF is dim
+PASS associated Wi-Fi has bright dot and waves
+PASS Bluetooth ON is bright
+PASS Wi-Fi OFF dims the whole glyph
+PASS unknown state is not falsely rendered as OFF or disconnected
+PASS radio updates preserve the same desktop without adding captions
+PASS all eight header controls retain cyclic focus
+PASS await condition
+PASS await condition
+PASS await condition
+PASS current physical Wi-Fi association is available without Location access
+LIMIT no Bluetooth adapter required: BT colors injected; physical/OEM Bluetooth state still requires device check
+Checks=29
+INSTRUMENTATION_CODE: -1

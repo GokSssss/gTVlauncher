@@ -1,0 +1,3 @@
+package ru.truetv.probe;
+import android.app.*;import android.content.*;import android.os.*;
+public final class VpnControl extends Activity {public void onCreate(Bundle b){super.onCreate(b);if(Build.FINGERPRINT.contains("generic")||Build.MODEL.contains("Android SDK")){Intent i=new Intent(this,VpnProbe.class).putExtra("bypass",getIntent().getBooleanExtra("bypass",false));if("stop".equals(getIntent().getAction()))stopService(i);else{if(android.net.VpnService.prepare(this)!=null)throw new IllegalStateException("VM fixture VPN not pre-authorized");if(Build.VERSION.SDK_INT>=26)startForegroundService(i);else startService(i);}}finish();}}

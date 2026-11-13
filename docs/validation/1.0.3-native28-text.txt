@@ -1,0 +1,27 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS To TV resolves ordinary text Share intent
+PASS await condition
+PASS share selection extracted exactly without needing a file URI
+PASS await condition
+PASS await condition
+PASS text send succeeds 0
+PASS await condition
+PASS full exact plaintext delivered 0
+PASS To TV resolves ordinary text Share intent
+PASS await condition
+PASS share selection extracted exactly without needing a file URI
+PASS await condition
+PASS await condition
+PASS text send succeeds 1
+PASS await condition
+PASS full exact plaintext delivered 1
+PASS To TV resolves ordinary text Share intent
+PASS await condition
+PASS share selection extracted exactly without needing a file URI
+PASS await condition
+PASS await condition
+PASS text send succeeds 2
+PASS await condition
+PASS full exact plaintext delivered 2
+Checks=24
+INSTRUMENTATION_CODE: -1

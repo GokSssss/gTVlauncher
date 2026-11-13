@@ -1,0 +1,231 @@
+INSTRUMENTATION_STATUS: check=1: VM guard = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=2: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=3: service declares Back-filter capability = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=4: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=5: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=6: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=7: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=8: Back filter is armed only for explicit capture = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=9: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=10: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=11: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=12: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=13: recording stops without saving a route = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=14: capture does not alter the other radio route = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=15: Home offers Test captured screen, manual choice and Cancel = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=16: test opens the dedicated route verifier = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=17: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=18: trial screen runs after observation and Back filtering have stopped = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=19: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=20: trial return asks whether the correct screen opened = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=21: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=22: Choose another rejects the captured route without saving = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=23: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=24: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=25: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=26: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=27: Back filter is armed only for explicit capture = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=28: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=29: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=30: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=31: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=32: recording stops without saving a route = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=33: capture does not alter the other radio route = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=34: Home offers Test captured screen, manual choice and Cancel = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=35: test opens the dedicated route verifier = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=36: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=37: trial screen runs after observation and Back filtering have stopped = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=38: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=39: trial return asks whether the correct screen opened = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=40: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=41: explicit confirmation saves the captured accessible system Activity = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=42: stored route retains the requested public Wi-Fi or Bluetooth action = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=43: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=44: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=45: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=46: Back filter is armed only for explicit capture = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=47: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=48: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=49: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=50: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=51: recording stops without saving a route = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=52: capture does not alter the other radio route = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=53: Home offers Test captured screen, manual choice and Cancel = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=54: test opens the dedicated route verifier = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=55: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=56: trial screen runs after observation and Back filtering have stopped = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=57: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=58: trial return asks whether the correct screen opened = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=59: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=60: explicit confirmation saves the captured accessible system Activity = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=61: stored route retains the requested public Wi-Fi or Bluetooth action = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=62: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=63: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=64: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=65: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=66: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=67: timeout callback leaves both confirmed routes unchanged = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=68: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=69: service interruption cancels capture = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=70: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=71: cancel clears the in-memory window component = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=72: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=73: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=74: existing selected force-stop still works after capture widened the legacy service package filter = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=75: await condition = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: check=76: capture stops all window observation and Back filtering = true
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS service declares Back-filter capability
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS Back filter is armed only for explicit capture
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS recording stops without saving a route
+PASS capture does not alter the other radio route
+PASS Home offers Test captured screen, manual choice and Cancel
+PASS test opens the dedicated route verifier
+PASS await condition
+PASS trial screen runs after observation and Back filtering have stopped
+PASS await condition
+PASS trial return asks whether the correct screen opened
+PASS await condition
+PASS Choose another rejects the captured route without saving
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS Back filter is armed only for explicit capture
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS recording stops without saving a route
+PASS capture does not alter the other radio route
+PASS Home offers Test captured screen, manual choice and Cancel
+PASS test opens the dedicated route verifier
+PASS await condition
+PASS trial screen runs after observation and Back filtering have stopped
+PASS await condition
+PASS trial return asks whether the correct screen opened
+PASS await condition
+PASS explicit confirmation saves the captured accessible system Activity
+PASS stored route retains the requested public Wi-Fi or Bluetooth action
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS Back filter is armed only for explicit capture
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS recording stops without saving a route
+PASS capture does not alter the other radio route
+PASS Home offers Test captured screen, manual choice and Cancel
+PASS test opens the dedicated route verifier
+PASS await condition
+PASS trial screen runs after observation and Back filtering have stopped
+PASS await condition
+PASS trial return asks whether the correct screen opened
+PASS await condition
+PASS explicit confirmation saves the captured accessible system Activity
+PASS stored route retains the requested public Wi-Fi or Bluetooth action
+PASS capture stops all window observation and Back filtering
+PASS await condition
+PASS await condition
+PASS await condition
+PASS capture stops all window observation and Back filtering
+PASS timeout callback leaves both confirmed routes unchanged
+PASS await condition
+PASS service interruption cancels capture
+PASS capture stops all window observation and Back filtering
+PASS cancel clears the in-memory window component
+PASS await condition
+PASS await condition
+PASS existing selected force-stop still works after capture widened the legacy service package filter
+PASS await condition
+PASS capture stops all window observation and Back filtering
+Checks=76
+INSTRUMENTATION_CODE: -1

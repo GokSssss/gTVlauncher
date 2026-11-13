@@ -1,0 +1,28 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS await condition
+PASS await condition
+PASS text creates no file before acceptance
+PASS incoming request explicitly says text
+PASS real TLS shared text accepted
+PASS await condition
+PASS entire original text retained exactly
+PASS preview is bounded without truncating payload
+PASS text still not saved automatically
+PASS text actions replace file actions
+PASS clipboard has full exact Unicode/CRLF/link/code
+PASS await condition
+PASS explicit Save creates exactly one TXT in Downloads
+PASS saved TXT is exact UTF-8 without BOM or newline conversion
+PASS completed Save prevents accidental duplicate click
+PASS next text auto-accepted only in open window
+PASS await condition
+PASS second code copies exactly including spaces
+PASS second text does not silently save
+PASS ordinary text/plain file accepted
+PASS await condition
+PASS actual .txt attachment stays in file mode
+PASS await condition
+SEND ConnectException
+PASS closed window refuses text
+Checks=24
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,10 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS physical host endpoint reachable before fixture VPN
+PASS own disposable VPN is active for phone UID
+PASS default socket is blocked by black-hole VPN
+PASS unrelated VPN address hint is ignored
+PASS Network-bound mutual TLS transfer completes with VPN on: 0
+PASS Network-bound mutual TLS transfer completes with VPN on: 1
+PASS Network-bound mutual TLS transfer completes with VPN on: 2
+Checks=7
+INSTRUMENTATION_CODE: -1

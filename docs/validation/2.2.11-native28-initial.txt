@@ -1,0 +1,34 @@
+First cold VM runs; not a successful validation.
+Header:
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS VM guard
+FAIL await condition
+java.lang.AssertionError: await condition
+	at ru.truetv.launcher.HeaderRadioCheck.check(HeaderRadioCheck.java:6)
+	at ru.truetv.launcher.HeaderRadioCheck.until(HeaderRadioCheck.java:6)
+	at ru.truetv.launcher.HeaderRadioCheck.onStart(HeaderRadioCheck.java:7)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Checks=2
+INSTRUMENTATION_CODE: 0
+
+Routes:
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS both screen-selection settings are present
+PASS screen settings stay together; obsolete Wi-Fi name permission row is removed
+PASS fixture endpoint is a genuinely accessible system Activity
+PASS settings opens dedicated Wi-Fi chooser
+PASS await condition
+PASS chooser uses correct independent mode
+PASS real public system candidates discovered before fixture injection
+PASS await condition
+PASS await condition
+FAIL await condition
+java.lang.AssertionError: await condition
+	at ru.truetv.launcher.ScreenRoutesCheck.check(ScreenRoutesCheck.java:6)
+	at ru.truetv.launcher.ScreenRoutesCheck.until(ScreenRoutesCheck.java:6)
+	at ru.truetv.launcher.ScreenRoutesCheck.testSelected(ScreenRoutesCheck.java:11)
+	at ru.truetv.launcher.ScreenRoutesCheck.onStart(ScreenRoutesCheck.java:13)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Checks=11
+INSTRUMENTATION_CODE: 0

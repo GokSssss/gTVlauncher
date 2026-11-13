@@ -1,0 +1,5 @@
+Own runtime classes: 526
+PASS package, version, resource alignment, no external font/native libraries, no legacy runtime classes
+APK SHA256 370235667f8bcd73182d579d68b60fc9a524398aaafe42c480334530be42a5cb
+
+Signing v1/v2 certificate a5a632bd6a8b8e2c3e3623ee245c3a5c3652c0c6b32751a35a49d6a9c2e8fa33. Installed APK and Drive raw bytes exact. Phone/bridge16 unchanged vs SOURCE241. VM restore: font1.0; A11y null/0; always_finish/location/captive_portal null; Launcher3 Home; Wi-Fi enabled; emulator stopped.

@@ -1,0 +1,9 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS physical host endpoint reachable before fixture VPN
+FAIL own disposable VPN is active for phone UID
+java.lang.AssertionError: own disposable VPN is active for phone UID
+	at ru.truetv.launcher.LanVpnCheck.check(LanVpnCheck.java:6)
+	at ru.truetv.launcher.LanVpnCheck.onStart(LanVpnCheck.java:8)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Checks=2
+INSTRUMENTATION_CODE: 0

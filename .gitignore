@@ -28,3 +28,6 @@ docs/drive-state.json
 __pycache__/
 *.pyc
 .DS_Store
+
+# Local download and publication verification
+readback/

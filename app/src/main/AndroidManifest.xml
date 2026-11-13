@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+ <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+ <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
  <uses-permission android:name="android.permission.INTERNET" />
  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
@@ -32,7 +34,8 @@
   </activity>
   <activity android:name="ru.truetv.launcher.CatalogActivity" android:exported="false" android:windowSoftInputMode="stateAlwaysHidden" />
   <activity android:name="ru.truetv.launcher.SettingsActivity" android:exported="false" />
-  <activity android:name="ru.truetv.launcher.BluetoothScreens" android:exported="false" android:windowSoftInputMode="stateAlwaysHidden" />
+  <activity android:name="ru.truetv.launcher.RadioScreens" android:exported="false" android:windowSoftInputMode="stateAlwaysHidden" />
+  <activity-alias android:name="ru.truetv.launcher.BluetoothScreens" android:targetActivity="ru.truetv.launcher.RadioScreens" android:exported="false" />
   <activity android:name="ru.truetv.launcher.AccessActivity" android:exported="false" />
   <activity android:name="ru.truetv.launcher.ExpertActivity" android:exported="false" />
   <activity android:name="ru.truetv.launcher.IrRemoteActivity" android:exported="false" android:windowSoftInputMode="stateAlwaysHidden" />

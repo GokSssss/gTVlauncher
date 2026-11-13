@@ -1,0 +1,9 @@
+font_scale=1.0
+location_mode=null
+captive_portal_mode=null
+enabled_accessibility_services=null
+accessibility_enabled=0
+always_finish_activities=null
+priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=true
+com.android.launcher3/.Launcher
+Coarse/fine grants from VM fixture revoked; Wi-Fi enabled; guest stopped after readback.

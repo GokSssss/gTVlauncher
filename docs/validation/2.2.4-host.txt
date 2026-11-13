@@ -1,0 +1,2 @@
+PASS 25 bridge identity/TLS/stream/reject/cleanup checks
+PASS 19 shared-text exact TLS/UTF8/limits/file-separation checks
