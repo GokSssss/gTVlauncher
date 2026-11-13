@@ -4,7 +4,7 @@
 
 Кнопки выбора теперь имеют контрастный фокус. Долгое OK Wi-Fi/BT показывает временный путь смены прямо под системными значками, без постоянных строк и сдвига сетки. Радиомодули этим нажатием не переключаются. Обновляется только TV APK; To TV1.0.4 прежний.
 
-Проверочный выпуск: https://github.com/GokSssss/true-tv-launcher/releases/tag/v2.2.12 . Проект: https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn . Практическая проверка: docs/2.2.12-Чек-лист.txt.
+APK2.2.12: https://drive.google.com/file/d/1E6rSaQXAVWVzrRqkxEqYB1ICiVXQ0WGU/view . GitHub source/tag v2.2.12 сохранены, но Release assets не загружены из-за HTTP401. Пока только черновик, не публичный релиз: https://github.com/GokSssss/true-tv-launcher/releases/tag/untagged-fc1cad786ad01e36b913 . Проект: https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn . Практическая проверка: docs/2.2.12-Чек-лист.txt.
 
 Сохранённая история предыдущих выпусков (может описывать отменённое поведение):
 
