@@ -27,7 +27,7 @@ https://drive.google.com/file/d/1DBaXdyQnrMoZ0naenvJTOva8XMgOw54F/view
 GitHub с14.11.2026: https://github.com/GokSssss/gTVlauncher
 Только черновик, ещё НЕ опубликован:
 https://github.com/GokSssss/gTVlauncher/releases/tag/untagged-1e6171e65cd167727c5a
-Draft444923243, tag_name=v2.2.12, prerelease=true, assets=[]. История и тег c8ef7982f3a1ede74bbab5d99b6a99337ea25f3b перенесены из прежнего репозитория без изменения. Загрузка вложения uploads.github.com снова отклонена HTTP401 Bad credentials. Завершить тот же новый draft после восстановления разрешённой аутентификации; тег/установщик/SOURCE не менять. Старый репозиторий сохранён. √ у папки остаётся снятой до выполнения п.7.1.
+Draft444923243, tag_name=v2.2.12, prerelease=true, assets=[]. История и тег c8ef7982f3a1ede74bbab5d99b6a99337ea25f3b перенесены из прежнего репозитория без изменения. Загрузка вложения uploads.github.com снова отклонена HTTP401 Bad credentials. Завершить тот же новый draft после восстановления разрешённой аутентификации; тег/установщик/SOURCE не менять. История и теги сохранены в новом репозитории; прежний адрес при последней проверке недоступен (Repository not found), нами он не изменялся. √ у папки остаётся снятой до выполнения п.7.1.
 Папка проекта: https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn
 Неизменный телефон: 1.0.4-To-TV.apk,78309байт, SHA256 0aa56e80fa6ec1056a827d8607c2bac9a9a660e719ca5cc411f10d49214d9ab6
 https://drive.google.com/file/d/16eJ4u5kGHqbdh19VmT2zXicBtsWX7pZF/view
