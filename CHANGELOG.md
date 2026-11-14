@@ -1,76 +1,121 @@
-## 2.2.4 + To TV1.0.3
+# Функции и изменения · Features and changes
 
-- Передача текста, ссылок и кодов через Android Поделиться.
-- TV: Сохранить в TXT / Скопировать в буфер / Закрыть, без автоматического сохранения.
-- Точный UTF-8, ограниченный preview, настоящие TXT остаются файлами.
-- Host44 и native28 текст/фон/файлы прошли, физическая пара/API34 не проверялись.
+[<kbd>🇷🇺 Русский</kbd>](#русский) &nbsp; [<kbd>🇬🇧 English</kbd>](#english) &nbsp; [← README](README.md)
 
-## 2.2.3 + To TV 1.0.2
+## Русский
 
-- Системное имя устройства перед моделью, если оно доступно.
-- Папка с плюсом и Wi-Fi вместо антенны; общий размер как у обычной папки.
-- Незавершённый232 заменён233 до полной публикации.
+Короткий пользовательский журнал: что добавилось и как этим пользоваться.
 
-## 2.2.1 + To TV 1.0.1
+### 2.2.12 · Запоминание системного экрана
 
-- Антенна рядом с файловым менеджером; приём только в открытом окне.
-- Одна галочка автоматического приёма, без доверенных устройств и фонового TV-приёма.
-- Прогресс на обоих устройствах; Открыть файл / Показать в папке / Закрыть.
-- Телефон без кодового подтверждения, исправлен повторный Share.
+- В выборе Wi-Fi/Bluetooth появилась кнопка **Запомнить экран**. Откройте нужное меню вручную, нажмите **Назад**, проверьте найденный переход и подтвердите его.
+- Кнопки выбора получили заметный фокус.
+- Подсказка долгого OK находится прямо под системными значками; сетка остаётся на месте.
 
-##2.2.0 + To TV1.0.0
+### 2.2.11 · Верхняя панель без постоянных подписей
 
-- Новый Wi-Fiмодуль: mDNS, mutualTLS1.2, потоковаяпередача иDownloadsбезперезаписи.
-- ТелефонныйsharetargetToTV безсвоегофайловогоменеджера; foregroundservice/URIgrants.
-- TVoverlay/уведомление,5политикдоверия/фона,толькоявныйopt-in.
-- Скрытыеpendingстадии/journalcleanup, файлытолькопослеSHA256.
--48nativeAPI28+25host;37directreceiverAPI34; fullphoneAPI34/физическиепары неподтверждены.
+- Убраны две строки справки и имён подключений.
+- Короткое OK на Wi-Fi/Bluetooth открывает сохранённый экран, а если подходящего нет — выбор экрана.
+- Долгое OK сообщает, где сменить экран. Радиомодули этим действием не переключаются.
+- Выключенные значки тусклые; у включённого Wi-Fi без подключения светится точка, дуги остаются тусклыми.
 
-##2.1.11
+### 2.2.9–2.2.10 · Выбор экранов
 
-- Исправлен переход Up из спискаTVAccess на первую кнопку; курсор списка скрывается при уходе фокуса.
-- Включение службы черезADB отделено от ограниченияAndroid13+ и скрытого OEM-списка; результат закрываетсяOK.
-- Явная3с заморозка текущегоHome выполняет проверяемое переключение с восстановлением прежнегоHome при ошибке. Простое назначение ничего не отключает.
--31nativeAPI28 и53hostAccessibility/Home PASS; приоритетOEMмоделировался, физическийTV/API34 не подтверждены.
+- Wi-Fi и Bluetooth настраиваются отдельно в разделе **Верхняя панель**.
+- Есть поиск и список доступных системных экранов. Сохранение — после проверки.
+- **Выбрать другой** и **Назад** возвращают к последнему пункту с прежней прокруткой.
+- Временная строка имён из 2.2.10 позже удалена в 2.2.11.
 
-## 2.1.10 / code220 — 2026-11-05
+### 2.2.7–2.2.8 · Быстрый доступ к связи
 
-Desktop add/remove/move reuses tiles; no full preference-map/render checks. Android events replace default Bluetooth/VPN polling; optional process dots sample only while enabled/foreground. Volume hold restoration ported from our TVMouse1.9, with PTY compatibility and no idle repeat timer. New photo defaults preserve stored choices. TVAccess button order/restricted wording and volume entry updated. Separate power actions with inline disabled hints; physical APK action remains after profile uninstall and accepts verified already-root ADB.
+- В верхнюю панель добавлен Wi-Fi перед Bluetooth, увеличены значки.
+- Добавлен выбор подходящего экрана Bluetooth для разных прошивок.
 
-API28:143 UI assertions,5 real volume-helper scenarios and2 actual Accessibility app-control scenarios. No new Android14/physicalTV/factory deletion proof. Normal ADB does not bypass system partition protection. Wi-Fi and IR application remain deferred.
+### 2.2.6 · Плитки и повторная передача
 
-# 2.0.4 — цвета выделения
+- После удаления приложения его место на рабочем столе становится обычным плюсом.
+- Доработаны повторная отправка и использование локальной сети при VPN. Если VPN блокирует LAN, доступ нужно разрешить в его настройках на обоих устройствах.
 
-В настройках более заметный фон/тонкая рамка выбранной пультом строки вместо слабого штатного выделения. В экспертном менеджере активные верхние кнопки нейтрально-серые с тёмным текстом вместо белого фона. Геометрия, механизмы подключения и управления приложениями не менялись. ИК-пульты обсуждаются отдельно, модуль управления не добавлялся.
+### 2.2.4 · Текст, ссылки и коды
 
-# 2.0.3 — геометрия рабочего стола и управление пультом
+- Выделенный текст отправляется через **Поделиться → To TV**.
+- На ТВ: **Сохранить в TXT**, **Скопировать в буфер** или **Закрыть**. Автоматического сохранения нет.
 
-По фотографиям старого Simple Launcher исправлено сжатие сетки к центру: столбцы и строки независимо заполняют экран. Компактная рамка6dp вокруг изображения, подпись отдельно снизу; шапка следует внешним границам иконок. Adaptive-графика без круглой маски Android, legacy сохраняет пропорции. Классическая стрелка перезапуска как в прежнем синем меню; серая панель сохранена.
+### 2.2.1–2.2.3 · Приём по Wi-Fi
 
-Системные приложения: асинхронные иконки в строках, контрастный фокус верхних кнопок, отсутствие ложного выделения строки при уходе фокуса. В меню подключения инструкция и параметры разработчика; явные сообщения при недоступном порте/тайм-ауте. Исправлен реальный Conscrypt ClassCastException при повторном чтении RSA: прежний ключ восстанавливается без CRT-приведения, разрешения ADB не сбрасываются.
+- Значок папки с плюсом и Wi-Fi сразу открывает приём. Доверенных списков нет.
+- Можно принимать с подтверждением или включить приём без подтверждения в открытом окне.
+- На обоих устройствах виден прогресс. После получения: **Открыть файл**, **Показать в папке**, **Закрыть**.
+- В списке получателей показываются имя устройства и модель, если они доступны.
 
-# 2.0.2 — расширенные функции и системные приложения
+### 2.1 · Файлы и управление
 
-Произвольный редактор порядка заменён одной галочкой со значками закрытия и перезапуска. Включена — оба действия первыми; выключена — оба на прежних местах. Пояснение о специальных возможностях под настройкой. Наконечник перезапуска перенесён на действительный конец дуги.
+- Встроенный файловый менеджер: дерево, многовыбор, операции с файлами, сортировка и колонка действий папки.
+- Добавлены TV Access и служебное управление приложениями; для соответствующих действий нужны разрешения пользователя.
+- В настройках — восстановление удержания кнопок громкости.
 
-Нижний раздел для опытных пользователей: ADB или имеющийся root, поиск системных пакетов, отключение/включение, удаление только для текущего пользователя с сохранением данных, восстановление заводского пакета. Подтверждение каждой операции, защита ключевых компонентов, проверка локального устройства дляADB и перечитывание результата. Сетевое разрешение добавлено только для явно запрашиваемогоADB. Нет автоматического root или включения отладки; pairing/TLS не поддерживается.
+### 2.0 · Основа
 
-# 2.0.1 — темы и исправление меню
+Рабочий стол с настраиваемой сеткой, меню приложений, темы и управление пультом.
 
-Убраны декоративные галочки/значки в списках настроек: один нативный radio-выбор с независимым курсором, начальный фокус на текущем значении. Удалено «Открыть приложение» из долгого нажатия. Порядок действий редактируется списком позиций; свойства всегда последние. Значок перемещения — четыре раздельные стрелки, без ромба.
+[↑ К выбору языка](#функции-и-изменения--features-and-changes)
 
-Тёмная тема по умолчанию, Светлая и Чёрная. Общая палитра для всех экранов, отдельные системные обои в том числе для каталога и настроек. Контекстные строки плотнее, пояснение A11y под каждым недоступным действием. Сохранены пакет, сертификат и данные обновления.
+---
 
-# 2.0 — True TV Launcher
+## English
 
-Первая самостоятельная исходная реализация, пакет ru.truetv.launcher, установка рядом. Имя, скруглённый жёлтый логотип, собственные классы, ресурсы, контурные значки и цифровой стиль часов. Старый проект22 сохранён.
+A short user-facing journal: what changed and how to use it.
 
-Одна настройка размера иконки, автоматические ячейки до7×5 и компактная рамка по образцу владельца. Общий компактный каталог для запуска/плюса/замены, поиск, системная галочка по умолчанию выключена, фиксированные иконки, три строки подписи и нижний отступ.
+### 2.2.12 · Capture a system screen
 
-Современные полупрозрачные контекстные меню и подменю настроек, навигация пультом по кругу, Отмена нижним пунктом, свойства последним действием. Версия приложения справа от названия. Настройка Open/Restart-first.
+- **Capture screen** is available in the Wi-Fi/Bluetooth chooser. Open the desired menu manually, press **Back**, test the captured route and confirm it.
+- Chooser buttons have clear focus.
+- The long-OK hint appears directly below the system icons; the grid stays in place.
 
-Серые действия доступны фокусу и открывают специальные возможности. Одна галочка индикаторов сама запрашивает Usage access. «Снять ограничение настроек» объясняет назначение и ведёт к ручному допуску/внешнему TVAccess с возвратом к специальным возможностям.
+### 2.2.11 · A cleaner top bar
 
-Дата перед часами, уменьшенный шрифт и slash-формат, три общих стиля. Фиксированный Bluetooth-счётчик, VPN ON, рекомендации и поиск Activity с сохранением проверенного перехода/запроса. Публичное меню питания/сон по поддержке ОС.
+- Removed the two permanent help and connection-name rows.
+- Short OK on Wi-Fi/Bluetooth opens the saved screen, or the chooser if no usable screen is saved.
+- Long OK explains where to change the screen. It does not toggle the radios.
+- Disabled radios look dim. When Wi-Fi is enabled but disconnected, the dot is bright and the waves are dim.
 
-Результаты проверок и границы функций — в техническом журнале и паспорте. TVAccess1.1 с исправленным OK опубликован отдельно, в проекте24.
+### 2.2.9–2.2.10 · Choose system screens
+
+- Configure Wi-Fi and Bluetooth independently under **Header**.
+- Search available system screens and save a route after testing it.
+- **Choose another** and **Back** restore the last row and scroll position.
+- The connection-name row introduced in 2.2.10 was later removed in 2.2.11.
+
+### 2.2.7–2.2.8 · Connection shortcuts
+
+- Added Wi-Fi before Bluetooth and enlarged the top icons.
+- Added a Bluetooth screen chooser for different firmware versions.
+
+### 2.2.6 · Tiles and repeat transfers
+
+- Uninstalling an app turns its home slot back into a normal plus button.
+- Improved repeat sharing and local-network routing with VPN. If a VPN blocks LAN access, allow it in the VPN settings on both devices.
+
+### 2.2.4 · Text, links and codes
+
+- Send selected text through **Share → To TV**.
+- On the TV: **Save as TXT**, **Copy to clipboard** or **Close**. Nothing is saved automatically.
+
+### 2.2.1–2.2.3 · Receive over Wi-Fi
+
+- The folder-plus-Wi-Fi icon opens reception immediately. No trusted-device lists.
+- Confirm incoming transfers or allow automatic acceptance while the reception window is open.
+- Both devices show progress. After reception: **Open file**, **Show in folder**, **Close**.
+- Receivers show their device name and model when available.
+
+### 2.1 · Files and app controls
+
+- Integrated file manager: folder tree, multiple selection, file operations, sorting and folder actions.
+- Added TV Access and app controls; the relevant actions require user-granted permissions.
+- Added volume-button hold restoration to settings.
+
+### 2.0 · Foundation
+
+A customizable home grid, app menu, themes and remote navigation.
+
+[↑ Language selection](#функции-и-изменения--features-and-changes)
