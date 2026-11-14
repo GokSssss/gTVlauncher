@@ -1,0 +1,38 @@
+name: Publish verified release files
+on:
+  workflow_dispatch:
+    inputs:
+      payload_commit:
+        description: Commit containing approved prebuilt files and release.json
+        required: true
+      release_tag:
+        description: Existing immutable version tag
+        required: true
+        default: v2.2.12
+permissions:
+  contents: read
+concurrency:
+  group: publish-${{ inputs.release_tag }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'GokSssss/gTVlauncher'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ inputs.payload_commit }}
+          path: incoming
+          persist-credentials: false
+      - name: Verify, upload and publish the existing draft
+        run: python3 .github/scripts/publish_release.py incoming
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          PAYLOAD_COMMIT: ${{ inputs.payload_commit }}
