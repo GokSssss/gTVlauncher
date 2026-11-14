@@ -32,7 +32,7 @@ def payload(root):
     names = [item['name'] for item in data['files']]
     version = tag[1:]
     required = {version + '-True-TV-Launcher.apk', version + '-True-TV-Launcher-SOURCE.zip',
-                version + '-True-TV-Launcher-Паспорт.txt', data['phone_version'] + '-To-TV.apk'}
+                version + '-True-TV-Launcher-Passport.txt', data['phone_version'] + '-To-TV.apk'}
     if len(names) != 4 or set(names) != required:
         raise ValueError('Exactly the four approved release files are required')
     for item in data['files']:
