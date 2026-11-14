@@ -1,0 +1,30 @@
+{
+  "repository": "GokSssss/gTVlauncher",
+  "tag": "v2.2.12",
+  "source_commit": "c8ef7982f3a1ede74bbab5d99b6a99337ea25f3b",
+  "release_id": 444923243,
+  "phone_version": "1.0.4",
+  "title": "True TV Launcher 2.2.12 — выбор и запоминание экранов",
+  "files": [
+    {
+      "name": "2.2.12-True-TV-Launcher.apk",
+      "size": 520845,
+      "sha256": "370235667f8bcd73182d579d68b60fc9a524398aaafe42c480334530be42a5cb"
+    },
+    {
+      "name": "2.2.12-True-TV-Launcher-SOURCE.zip",
+      "size": 12594336,
+      "sha256": "4bf55a962f50bbaacd314f4cc7719eee0b4040e118961afb20bf269ba2ae5c50"
+    },
+    {
+      "name": "2.2.12-True-TV-Launcher-Паспорт.txt",
+      "size": 9715,
+      "sha256": "b995498e3583cd41bb794d5a6f5571101f087296678d796884329c7d70411e00"
+    },
+    {
+      "name": "1.0.4-To-TV.apk",
+      "size": 78309,
+      "sha256": "0aa56e80fa6ec1056a827d8607c2bac9a9a660e719ca5cc411f10d49214d9ab6"
+    }
+  ]
+}
