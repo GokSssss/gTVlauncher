@@ -22,12 +22,11 @@ https://drive.google.com/file/d/1E6rSaQXAVWVzrRqkxEqYB1ICiVXQ0WGU/view
 SOURCE: 2.2.12-True-TV-Launcher-SOURCE.zip
 12594336байт; SHA256 4bf55a962f50bbaacd314f4cc7719eee0b4040e118961afb20bf269ba2ae5c50
 https://drive.google.com/file/d/1DBaXdyQnrMoZ0naenvJTOva8XMgOw54F/view
-Для Drive и GitHub подготовлены одни и те же APK/SOURCE/этот внешний паспорт, без отдельных пересборок. Drive завершён; GitHub вложения пока не загружены (HTTP401), см. ниже.
+Для Drive и GitHub подготовлены одни и те же APK/SOURCE/этот внешний паспорт, без отдельных пересборок. Пакет одинаков для Drive и GitHub; сведения о публикации ниже.
 Папка выпуска: https://drive.google.com/drive/folders/18i7NA3bz4BZfCXxtKjiskUZ-43KY-_i4
-GitHub с14.11.2026: https://github.com/GokSssss/gTVlauncher
-Только черновик, ещё НЕ опубликован:
-https://github.com/GokSssss/gTVlauncher/releases/tag/untagged-1e6171e65cd167727c5a
-Draft444923243, tag_name=v2.2.12, prerelease=true, assets=[]. История и тег c8ef7982f3a1ede74bbab5d99b6a99337ea25f3b перенесены из прежнего репозитория без изменения. Загрузка вложения uploads.github.com снова отклонена HTTP401 Bad credentials. Завершить тот же новый draft после восстановления разрешённой аутентификации; тег/установщик/SOURCE не менять. История и теги сохранены в новом репозитории; прежний адрес при последней проверке недоступен (Repository not found), нами он не изменялся. √ у папки остаётся снятой до выполнения п.7.1.
+GitHub: https://github.com/GokSssss/gTVlauncher
+Release: https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12
+Ручная публикация проверенных готовых файлов через GitHub Actions со встроенным GITHUB_TOKEN, без личного PAT и без ключей подписи на runner. Используется существующий release ID444923243 и неизменный тегv2.2.12/c8ef7982f3a1ede74bbab5d99b6a99337ea25f3b. Перед публикацией и после неё процесс скачивает все4файла и сверяет размер/SHA256. Ошибка прямой загрузки из облачного сеанса401 не исправляется пересозданием репозитория; Actions выполняет авторизованную публикацию внутри GitHub.
 Папка проекта: https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn
 Неизменный телефон: 1.0.4-To-TV.apk,78309байт, SHA256 0aa56e80fa6ec1056a827d8607c2bac9a9a660e719ca5cc411f10d49214d9ab6
 https://drive.google.com/file/d/16eJ4u5kGHqbdh19VmT2zXicBtsWX7pZF/view

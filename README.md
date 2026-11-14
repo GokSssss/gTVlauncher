@@ -6,7 +6,7 @@
 
 Лаунчер для Android TV с управлением пультом.
 
-**[Скачать APK 2.2.12](https://drive.google.com/file/d/1E6rSaQXAVWVzrRqkxEqYB1ICiVXQ0WGU/view)** · [Функции и изменения](CHANGELOG.md#русский) · [Скриншоты](#screenshots)
+**[Скачать APK 2.2.12](https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/2.2.12-True-TV-Launcher.apk)** · [Функции и изменения](CHANGELOG.md#русский) · [Скриншоты](#screenshots)
 
 ### Что умеет
 
@@ -31,7 +31,7 @@ flowchart LR
 
 **Передача:** на ТВ сначала откройте приём по значку папки с плюсом и Wi-Fi. Приём работает только пока это окно открыто. [To TV для телефона](https://drive.google.com/file/d/16eJ4u5kGHqbdh19VmT2zXicBtsWX7pZF/view) · [Все файлы проекта](https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn).
 
-> 2.2.12 — проверочный выпуск. Поддерживается Android 5.0 и новее; работа отдельных системных панелей зависит от устройства. GitHub-вложения пока недоступны из-за ошибки авторизации; APK доступен по ссылке выше.
+> 2.2.12 — проверочный выпуск. Поддерживается Android 5.0 и новее; работа отдельных системных панелей зависит от устройства. [Релиз на GitHub](https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12).
 
 [↑ Русский / English](#true-tv-launcher)
 
@@ -41,7 +41,7 @@ flowchart LR
 
 A remote-friendly launcher for Android TV.
 
-**[Download APK 2.2.12](https://drive.google.com/file/d/1E6rSaQXAVWVzrRqkxEqYB1ICiVXQ0WGU/view)** · [Features and changes](CHANGELOG.md#english) · [Screenshots](#screenshots)
+**[Download APK 2.2.12](https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/2.2.12-True-TV-Launcher.apk)** · [Features and changes](CHANGELOG.md#english) · [Screenshots](#screenshots)
 
 ### Features
 
@@ -66,7 +66,7 @@ Capture requires the enabled Accessibility service. Sessions last up to two minu
 
 **Transfers:** first open reception on the TV using the folder-plus-Wi-Fi icon. Reception works only while that window is open. [To TV for your phone](https://drive.google.com/file/d/16eJ4u5kGHqbdh19VmT2zXicBtsWX7pZF/view) · [Project files](https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn).
 
-> 2.2.12 is a preview release. Android 5.0 or newer is supported; individual system panels depend on the device. GitHub attachments are currently blocked by an authentication error; use the APK link above.
+> 2.2.12 is a preview release. Android 5.0 or newer is supported; individual system panels depend on the device. [GitHub release](https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12).
 
 [↑ Русский / English](#true-tv-launcher)
 
