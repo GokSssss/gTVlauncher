@@ -1,0 +1,45 @@
+{
+  "repository": "GokSssss/gTVlauncher",
+  "date": "2026-11-15",
+  "head": "a76ebbceb923b4bccf19cbc326c375137e85ffa4",
+  "releases": [
+    {
+      "id": 444923243,
+      "tag": "v2.2.12",
+      "name": "True TV Launcher 2.2.12 — выбор и запоминание экранов",
+      "body": "[<kbd>🇷🇺 Русский</kbd>](#русский) · [<kbd>🇬🇧 English</kbd>](#english)\n\n## Русский\n\n### Что нового\n- **Запомнить экран** Wi-Fi/Bluetooth: открыть нужное меню вручную → **Назад** → проверить переход → подтвердить.\n- Чёткое выделение кнопок выбора.\n- Подсказка долгого OK под системными значками, без сдвига рабочего стола.\n\n**Установка:** TV APK поверх прежнего лаунчера. Телефонный **To TV1.0.4** не менялся; приложен для новых установок.\n\nДля запоминания нужна включённая пользователем служба специальных возможностей. Сеанс максимум2минуты, без текста экрана и истории процессов. Доступность конкретной панели зависит от прошивки.\n\n**Проверочный выпуск:**176 native проверок на эмуляторе API28; физические OEM панели требуют проверки на устройстве. Android5.0+, min21/target34. Чистая сборка из SOURCE совпала с APK, подпись прежняя. Файлы на Drive и GitHub одинаковые.\n\n## English\n\n### Changes\n- **Capture screen** for Wi-Fi/Bluetooth: open the menu manually → **Back** → test → confirm.\n- Clear focus on chooser buttons.\n- The long-OK hint appears below the system icons without moving the home grid.\n\n**Install:** update the TV APK over the previous launcher. Phone **To TV1.0.4** is unchanged and included for new installations.\n\nCapture requires the user-enabled Accessibility service. Sessions last up to2minutes; no screen text or process history is collected. A specific panel may not be directly accessible on some firmware.\n\n**Preview release:**176 native assertions on an API28 emulator. Physical OEM panels still need device testing. Android5.0+, min21/target34. A clean SOURCE build matched the APK; signing identity is unchanged. Drive and GitHub use the same files.\n\n[Журнал функций / Features and changes](https://github.com/GokSssss/gTVlauncher/blob/main/CHANGELOG.md) · [Проект / Project files](https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn)\n",
+      "prerelease": true,
+      "draft": false,
+      "assets": [
+        {
+          "id": 746319056,
+          "name": "1.0.4-To-TV.apk",
+          "size": 78309,
+          "digest": "sha256:0aa56e80fa6ec1056a827d8607c2bac9a9a660e719ca5cc411f10d49214d9ab6",
+          "url": "https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/1.0.4-To-TV.apk"
+        },
+        {
+          "id": 746316363,
+          "name": "2.2.12-True-TV-Launcher-Passport.txt",
+          "size": 9715,
+          "digest": "sha256:b995498e3583cd41bb794d5a6f5571101f087296678d796884329c7d70411e00",
+          "url": "https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/2.2.12-True-TV-Launcher-Passport.txt"
+        },
+        {
+          "id": 746316303,
+          "name": "2.2.12-True-TV-Launcher-SOURCE.zip",
+          "size": 12594336,
+          "digest": "sha256:4bf55a962f50bbaacd314f4cc7719eee0b4040e118961afb20bf269ba2ae5c50",
+          "url": "https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/2.2.12-True-TV-Launcher-SOURCE.zip"
+        },
+        {
+          "id": 746316268,
+          "name": "2.2.12-True-TV-Launcher.apk",
+          "size": 520845,
+          "digest": "sha256:370235667f8bcd73182d579d68b60fc9a524398aaafe42c480334530be42a5cb",
+          "url": "https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/2.2.12-True-TV-Launcher.apk"
+        }
+      ]
+    }
+  ]
+}

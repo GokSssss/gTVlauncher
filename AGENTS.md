@@ -1,5 +1,11 @@
 # Project22.1 — True TV Launcher (historical workspace30)
 
+## Публичные описания — указание владельца от 15.11.2026
+
+README, пользовательский CHANGELOG и описание GitHub Release: короткие пункты о функциях и заметных изменениях. Что появилось, изменилось, исправлено или убрано — без статистики тестов, классов, сборок, SHA, размеров, SDK/API, сертификатов и сведений о ключах. Не вставлять Mermaid и технические схемы. Подробные инструкции и техническую историю хранить отдельно, с короткой ссылкой для разработчика. Номера версий и необходимые пользователю условия сохраняются.
+
+Перед редактурой и публикацией прочитать [правила публичных описаний](docs/PUBLICATION_STYLE.md) и [общий журнал новых функций](https://drive.google.com/file/d/1d7utMdLkdiwR321UenGIRro9yxXhJUlt/view). В README — действующие функции, в Release — изменения конкретного выпуска. Русское и английское описания согласованы. Для правки текста не пересобирать APK и не менять выпущенные теги/бинарники/SOURCE.
+
 Canonical GitHub since14Nov2026: https://github.com/GokSssss/gTVlauncher . Previous repository links below are historical. Preserve existing tags and immutable APK/SOURCE. Public README/CHANGELOG use Russian/English jump links and a concise user-facing journal.
 
 Before work and release read `22.1База!`, the live general rules (link in Base), `Журнал улучшений True TV Launcher.txt` and `30_DEVELOPMENT_LOG_RU.txt`. Keep the live Drive documents and local instructions consistent. General-rule snapshot is in `rules/`. Latest direct user instructions override old snapshots.

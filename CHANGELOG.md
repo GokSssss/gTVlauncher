@@ -8,8 +8,8 @@
 
 ### 2.2.12 · Запоминание системного экрана
 
-- В выборе Wi-Fi/Bluetooth появилась кнопка **Запомнить экран**. Откройте нужное меню вручную, нажмите **Назад**, проверьте найденный переход и подтвердите его.
-- Кнопки выбора получили заметный фокус.
+- Добавлена кнопка **Запомнить экран** для нужного меню Wi-Fi или Bluetooth.
+- Выбранная пультом кнопка теперь заметно выделяется.
 - Подсказка долгого OK находится прямо под системными значками; сетка остаётся на месте.
 
 ### 2.2.11 · Верхняя панель без постоянных подписей
@@ -68,8 +68,8 @@ A short user-facing journal: what changed and how to use it.
 
 ### 2.2.12 · Capture a system screen
 
-- **Capture screen** is available in the Wi-Fi/Bluetooth chooser. Open the desired menu manually, press **Back**, test the captured route and confirm it.
-- Chooser buttons have clear focus.
+- Added **Capture screen** for the Wi-Fi or Bluetooth menu you want to open.
+- The button selected with the remote now has clear focus.
 - The long-OK hint appears directly below the system icons; the grid stays in place.
 
 ### 2.2.11 · A cleaner top bar

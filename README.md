@@ -18,20 +18,18 @@
 
 ### Новое в 2.2.12
 
-**Запоминание экрана Wi-Fi/Bluetooth:** откройте «Настройки лаунчера → Верхняя панель → Выбор экрана».
+- Добавлено запоминание нужного экрана Wi-Fi или Bluetooth.
+- Выбранная пультом кнопка в списке экранов теперь заметно выделяется.
+- Подсказка долгого OK появляется под системными значками и не сдвигает рабочий стол.
 
-```mermaid
-flowchart LR
-  A["Запомнить экран"] --> B["Открыть нужное меню"] --> C["Назад"] --> D["Проверить"] --> E["Подтвердить"]
-```
+### Как пользоваться
 
-Кнопки выбора теперь заметно выделяются. Подсказка долгого OK появляется под системными значками, не сдвигая рабочий стол.
+- **Передача:** откройте приём на ТВ по значку папки с плюсом и Wi-Fi. На телефоне выберите **Поделиться → To TV**. Приём работает, пока окно ТВ открыто.
+- **Выбор экрана:** откройте **Настройки лаунчера → Верхняя панель → Выбор экрана**. Для запоминания нужна включённая служба специальных возможностей. [Короткая инструкция](docs/USAGE.md#русский).
 
-Для запоминания нужна включённая служба специальных возможностей. Сеанс ограничен двумя минутами; до подтверждения экран не сохраняется. Доступность конкретной панели зависит от прошивки.
+[To TV для телефона](https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/1.0.4-To-TV.apk) · [Все файлы выпуска](https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12)
 
-**Передача:** на ТВ сначала откройте приём по значку папки с плюсом и Wi-Fi. Приём работает только пока это окно открыто. [To TV для телефона](https://drive.google.com/file/d/16eJ4u5kGHqbdh19VmT2zXicBtsWX7pZF/view) · [Все файлы проекта](https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn).
-
-> 2.2.12 — проверочный выпуск. Поддерживается Android 5.0 и новее; работа отдельных системных панелей зависит от устройства. [Релиз на GitHub](https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12).
+Проверочный выпуск. Для Obtainium включите **Предварительные выпуски**. Доступность системных экранов зависит от телевизора.
 
 [↑ Русский / English](#true-tv-launcher)
 
@@ -53,20 +51,18 @@ A remote-friendly launcher for Android TV.
 
 ### New in 2.2.12
 
-**Capture a Wi-Fi/Bluetooth screen:** open “Launcher settings → Header → Choose screen”.
+- Added capture of the Wi-Fi or Bluetooth screen you want to open.
+- The chooser button selected with the remote now has clear focus.
+- The long-OK hint appears below the system icons without moving the home grid.
 
-```mermaid
-flowchart LR
-  A["Capture screen"] --> B["Open the menu you need"] --> C["Back"] --> D["Test"] --> E["Confirm"]
-```
+### How to use
 
-Chooser buttons now have clear focus. The long-OK hint appears below the system icons without moving the home grid.
+- **Transfers:** open reception on the TV using the folder-plus-Wi-Fi icon, then choose **Share → To TV** on your phone. Reception works while the TV window is open.
+- **Screen selection:** open **Launcher settings → Header → Choose screen**. Capture requires the enabled Accessibility service. [Quick guide](docs/USAGE.md#english).
 
-Capture requires the enabled Accessibility service. Sessions last up to two minutes; nothing is saved before confirmation. Access to a specific system panel depends on the firmware.
+[To TV for your phone](https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.12/1.0.4-To-TV.apk) · [Release files](https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12)
 
-**Transfers:** first open reception on the TV using the folder-plus-Wi-Fi icon. Reception works only while that window is open. [To TV for your phone](https://drive.google.com/file/d/16eJ4u5kGHqbdh19VmT2zXicBtsWX7pZF/view) · [Project files](https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn).
-
-> 2.2.12 is a preview release. Android 5.0 or newer is supported; individual system panels depend on the device. [GitHub release](https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.12).
+Preview release. Enable **Pre-releases** in Obtainium. Available system screens depend on the TV.
 
 [↑ Русский / English](#true-tv-launcher)
 
@@ -74,12 +70,14 @@ Capture requires the enabled Accessibility service. Sessions last up to two minu
 
 ## Screenshots
 
-Снимки 2.2.12 с тестового эмулятора / Version 2.2.12 captured on a test emulator.
+Снимки с тестового эмулятора / Captured on a test emulator.
 
-**Главный экран и временная подсказка / Home screen and temporary hint**
+**Главный экран / Home screen**
 
-![Home screen with a hint directly below the system icons](docs/images/home.png)
+![Home screen with a hint below the system icons](docs/images/home.png)
 
-**Выбор экрана Bluetooth и выделение кнопки / Bluetooth screen chooser and button focus**
+**Выбор экрана Bluetooth / Bluetooth screen chooser**
 
-![Bluetooth screen chooser with a clearly focused Show all button](docs/images/bluetooth-screen.png)
+![Bluetooth screen chooser with a clearly focused button](docs/images/bluetooth-screen.png)
+
+[Документация для разработчика / Developer documentation](docs/DEVELOPMENT.md) · [Проект на Диске / Project on Drive](https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn)
