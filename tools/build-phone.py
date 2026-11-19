@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Small share-target APK, using the same pinned toolchain and separately stored owner key."""
+"""Small send/receive APK, using the same pinned toolchain and separately stored owner key."""
 from pathlib import Path
 import os,subprocess,shutil,zipfile,struct,re
 root=Path(__file__).resolve().parent.parent;os.chdir(root);cache=root/'.cache';build=root/'phone/build/portable'

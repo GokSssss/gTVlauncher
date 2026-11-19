@@ -8,7 +8,7 @@ on:
       release_tag:
         description: Existing immutable version tag
         required: true
-        default: v2.2.12
+        default: v2.2.13
 permissions:
   contents: read
 concurrency:

@@ -1,0 +1,45 @@
+s_glBindAttribLocation: bind attrib 0 name position
+s_glBindAttribLocation: bind attrib 1 name color
+s_glBindAttribLocation: bind attrib 2 name localCoord
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS notification control is directly before power
+PASS nine system controls keep cyclic remote focus
+PASS no new help row or desktop rebuild reserve
+PASS missing notification access is unknown rather than a fake zero
+PASS top control opens the notifications screen
+PASS await condition
+PASS access is requested only through an explicit Android settings button
+PASS opening the screen did not enable notification access automatically
+PASS await condition
+PASS await condition
+PASS await condition
+PASS group summary is excluded when its child notifications are present
+PASS await condition
+PASS notification events reuse the existing desktop and tiles
+SCREENSHOT unavailable on this VM display
+PASS await condition
+PASS reposting the same notification updates content without duplicating it
+PASS await condition
+PASS screen list and header use the same live notification count
+PASS await condition
+PASS await condition
+PASS actual detail Dismiss button accepts remote activation
+PASS await condition
+PASS dismissal updates the live list without removing another notification
+PASS await condition
+PASS await condition
+PASS actual detail Open button accepts remote activation
+PASS await condition
+PASS original cross-app PendingIntent opens its real target
+PASS await condition
+PASS await condition
+PASS await condition
+PASS await condition
+PASS counter is immediately correct after returning from a grid settings rebuild
+PASS await condition
+PASS revoking access clears content and stops reporting a count
+PASS grant/revoke and all notification changes preserve desktop instances
+Checks=38
+INSTRUMENTATION_CODE: -1

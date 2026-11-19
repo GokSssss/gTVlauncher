@@ -36,6 +36,8 @@
   <activity android:name="ru.truetv.launcher.SettingsActivity" android:exported="false" />
   <activity android:name="ru.truetv.launcher.RadioScreens" android:exported="false" android:windowSoftInputMode="stateAlwaysHidden" />
   <activity-alias android:name="ru.truetv.launcher.BluetoothScreens" android:targetActivity="ru.truetv.launcher.RadioScreens" android:exported="false" />
+  <activity android:name="ru.truetv.launcher.NoticesActivity" android:exported="false" />
+  <service android:name="ru.truetv.launcher.Notices" android:label="@string/notice_name" android:description="@string/notice_description" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:exported="true"><intent-filter><action android:name="android.service.notification.NotificationListenerService"/></intent-filter></service>
   <activity android:name="ru.truetv.launcher.AccessActivity" android:exported="false" />
   <activity android:name="ru.truetv.launcher.ExpertActivity" android:exported="false" />
   <activity android:name="ru.truetv.launcher.IrRemoteActivity" android:exported="false" android:windowSoftInputMode="stateAlwaysHidden" />

@@ -1,0 +1,10 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS VM guard
+FAIL await condition
+java.lang.AssertionError: await condition
+	at ru.truetv.launcher.NoticesCheck.check(NoticesCheck.java:6)
+	at ru.truetv.launcher.NoticesCheck.until(NoticesCheck.java:6)
+	at ru.truetv.launcher.NoticesCheck.onStart(NoticesCheck.java:7)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+Checks=2
+INSTRUMENTATION_CODE: 0

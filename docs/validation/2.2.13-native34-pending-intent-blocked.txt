@@ -1,0 +1,40 @@
+s_glBindAttribLocation: bind attrib 0 name position
+s_glBindAttribLocation: bind attrib 1 name color
+s_glBindAttribLocation: bind attrib 2 name localCoord
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS await condition
+PASS notification control is directly before power
+PASS nine system controls keep cyclic remote focus
+PASS no new help row or desktop rebuild reserve
+PASS missing notification access is unknown rather than a fake zero
+PASS top control opens the notifications screen
+PASS await condition
+PASS access is requested only through an explicit Android settings button
+PASS opening the screen did not enable notification access automatically
+PASS await condition
+PASS await condition
+PASS await condition
+PASS group summary is excluded when its child notifications are present
+PASS await condition
+PASS notification events reuse the existing desktop and tiles
+PASS await condition
+PASS reposting the same notification updates content without duplicating it
+PASS await condition
+PASS screen list and header use the same live notification count
+PASS await condition
+PASS await condition
+PASS actual detail Dismiss button accepts remote activation
+PASS await condition
+PASS dismissal updates the live list without removing another notification
+PASS await condition
+PASS await condition
+PASS actual detail Open button accepts remote activation
+FAIL await condition
+java.lang.AssertionError: await condition
+	at ru.truetv.launcher.NoticesCheck.check(NoticesCheck.java:6)
+	at ru.truetv.launcher.NoticesCheck.until(NoticesCheck.java:6)
+	at ru.truetv.launcher.NoticesCheck.onStart(NoticesCheck.java:9)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+Checks=29
+INSTRUMENTATION_CODE: 0

@@ -1,0 +1,14 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS antenna immediately follows file manager
+PASS desktop antenna opens receive popup directly
+PASS await condition
+PASS await condition
+PASS no file before confirmation
+FAIL only Accept/Decline for incoming request
+java.lang.AssertionError: only Accept/Decline for incoming request
+	at ru.truetv.launcher.SessionCheck.check(SessionCheck.java:6)
+	at ru.truetv.launcher.SessionCheck.onStart(SessionCheck.java:14)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+SEND REJECTED
+Checks=6
+INSTRUMENTATION_CODE: 0

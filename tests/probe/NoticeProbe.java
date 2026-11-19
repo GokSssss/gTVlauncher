@@ -1,0 +1,8 @@
+package ru.truetv.probe;
+import android.app.*;import android.content.*;import android.os.Build;
+/** Disposable VM only. Real notifications from a different UID than the launcher. */
+public final class NoticeProbe extends BroadcastReceiver {
+ public void onReceive(Context c,Intent i){if(!Build.FINGERPRINT.contains("generic")&&!Build.MODEL.contains("Android SDK"))return;NotificationManager m=(NotificationManager)c.getSystemService(Context.NOTIFICATION_SERVICE);String op=i.getStringExtra("op");if("clear".equals(op)){for(int id:new int[]{2451,2452,2453})m.cancel(id);return;}if("remove-first".equals(op)){m.cancel(2451);return;}if(Build.VERSION.SDK_INT>=26)m.createNotificationChannel(new NotificationChannel("probe243","Test notifications",NotificationManager.IMPORTANCE_DEFAULT));PendingIntent open=PendingIntent.getActivity(c,243,new Intent(c,Probe.class).putExtra("origin","Notification open243"),PendingIntent.FLAG_UPDATE_CURRENT|(Build.VERSION.SDK_INT>=23?PendingIntent.FLAG_IMMUTABLE:0));
+ if(!"update".equals(op)){m.notify(2451,n(c,"Sample notification","A notification from another app",false,open));m.notify(2453,n(c,"Two notifications","Group summary",true,open));}m.notify(2452,n(c,"File received","update".equals(op)?"Updated notification text":"Example.txt is ready",false,open));}
+ private Notification n(Context c,String title,String text,boolean summary,PendingIntent open){Notification.Builder b=Build.VERSION.SDK_INT>=26?new Notification.Builder(c,"probe243"):new Notification.Builder(c);return b.setSmallIcon(android.R.drawable.stat_notify_chat).setContentTitle(title).setContentText(text).setGroup("probe243").setGroupSummary(summary).setContentIntent(open).build();}
+}

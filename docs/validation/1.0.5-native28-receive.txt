@@ -1,0 +1,35 @@
+INSTRUMENTATION_RESULT: passed=true
+INSTRUMENTATION_RESULT: report=PASS VM guard
+PASS ordinary app icon resolves directly to receive mode
+PASS await condition
+PASS visible receiver advertises through the shared discovery protocol
+PASS await condition
+PASS nothing saved before user confirmation
+SEND IOException
+PASS declining a phone transfer writes no file
+PASS await condition
+PASS phone receives a confirmed real TLS transfer
+PASS await condition
+PASS phone public Downloads content is exact
+PASS received file has an openable content URI on legacy and scoped storage
+PASS another UID cannot read before an exact URI grant
+PASS separate provider UID reads exact bytes through the explicit grant
+PASS read grant does not permit writes
+PASS second transfer works without reopening the phone receiver
+PASS await condition
+PASS same-name transfers retain both completed files
+PASS phone receives text using the same To TV protocol
+PASS await condition
+PASS received text retains Unicode, URL escapes and CRLF
+PASS phone copies the complete text only on explicit action
+PASS receiving and copying text do not create a TXT
+PASS await condition
+PASS Save as TXT creates exact UTF-8 in public Downloads
+PASS await condition
+SEND ConnectException
+PASS leaving the phone receive window closes its socket
+PASS leaving stops advertisement and multicast lock
+PASS Android Share resolves to sending rather than receive mode
+PASS Share opens device discovery immediately
+Checks=30
+INSTRUMENTATION_CODE: -1

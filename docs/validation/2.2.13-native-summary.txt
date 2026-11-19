@@ -1,0 +1,12 @@
+19.11.2026 — окончательные нативные проверки2.2.13/code243 и ToTV1.0.5/code105 завершены.
+2.2.13-final28-notices.txt: 38 PASS
+2.2.13-final28-files.txt: 45 PASS
+2.2.13-final28-text.txt: 24 PASS
+2.2.13-final28-header.txt: 29 PASS
+1.0.5-native28-receive.txt: 30 PASS
+1.0.5-native28-repeat-recheck.txt: 35 PASS
+2.2.13-native34-notices-final.txt: 38 PASS
+1.0.5-native34-receive.txt: 30 PASS
+2.2.13-native34-files.txt: 73 PASS
+2.2.13-native34-text.txt: 24 PASS
+Итого 366 успешных утверждений: API28/Android9 и API34/Android14, только одноразовые VM. Последние API28 файлы относятся к окончательному APK SHA44072799e4f6eb41ea8846d65ebb19a50e03710a41fa5c458914c624defd9f2e; phone105 не менялся после успешных28 проверок. Оба эмулятора остановлены, secure listener/A11y/права/Watchdog восстановлены по readback. Не обещаем физическую/OEM проверку всех устройств. HostBridge25 + Text19 +12 последовательных передач прошли. Подпись v1/v2 прежним сертификатом. Далее один точный SOURCE и чистая побайтовая пересборка обоих APK; её результат и поздние Drive/GitHub ID остаются во внешнем паспорте/живых документах, без перепаковки опубликованного Source.

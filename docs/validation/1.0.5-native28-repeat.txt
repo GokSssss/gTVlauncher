@@ -1,0 +1,26 @@
+INSTRUMENTATION_RESULT: passed=false
+INSTRUMENTATION_RESULT: report=PASS To TV resolves ordinary text Share intent
+PASS await condition
+PASS share selection extracted exactly without needing a file URI
+PASS await condition
+PASS await condition
+PASS text send succeeds 0
+PASS await condition
+PASS full exact plaintext delivered 0
+PASS To TV resolves ordinary text Share intent
+PASS reused Share task consumes onNewIntent and creates fresh chooser
+PASS await condition
+PASS share selection extracted exactly without needing a file URI
+PASS await condition
+PASS await condition
+PASS text send succeeds 1
+PASS await condition
+PASS full exact plaintext delivered 1
+PASS To TV resolves ordinary text Share intent
+FAIL reused Share task consumes onNewIntent and creates fresh chooser
+java.lang.AssertionError: reused Share task consumes onNewIntent and creates fresh chooser
+	at ru.truetv.launcher.PhoneRepeatCheck.check(PhoneRepeatCheck.java:6)
+	at ru.truetv.launcher.PhoneRepeatCheck.onStart(PhoneRepeatCheck.java:9)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2145)
+Checks=19
+INSTRUMENTATION_CODE: 0

@@ -6,6 +6,11 @@
 
 Короткий пользовательский журнал: что добавилось и как этим пользоваться.
 
+### 2.2.13 · Уведомления и приём на телефоне
+
+- Круг перед кнопкой питания показывает количество уведомлений. Нажатие открывает список; при нуле круг пустой. Для работы разрешите доступ к уведомлениям.
+- To TV: обычное открытие включает приём, **Поделиться → To TV** сразу открывает поиск получателя. Обновите приложение на телефоне.
+
 ### 2.2.12 · Запоминание системного экрана
 
 - Добавлена кнопка **Запомнить экран** для нужного меню Wi-Fi или Bluetooth.
@@ -65,6 +70,11 @@
 ## English
 
 A short user-facing journal: what changed and how to use it.
+
+### 2.2.13 · Notifications and phone reception
+
+- The circle before power shows the notification count. Press it to view the list; zero leaves the circle empty. Allow notification access to use this feature.
+- To TV: opening the app starts reception; **Share → To TV** opens device discovery immediately. Update the phone app.
 
 ### 2.2.12 · Capture a system screen
 

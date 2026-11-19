@@ -1,0 +1,30 @@
+package ru.truetv.launcher;
+import android.app.*;
+import android.content.*;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.view.*;
+import android.widget.*;
+import java.util.*;
+
+/** Local live notifications. Reading access is always granted by the user in Android settings. */
+public final class NoticesActivity extends Activity implements Notices.Listener {
+    private LinearLayout body;private TextView state;private Button permission,retry;private ListView list;private boolean visible;
+    private final ArrayList<Notices.Entry> entries=new ArrayList<>();private final HashMap<String,String> labels=new HashMap<>();private BaseAdapter adapter;
+    protected void onCreate(Bundle saved){Ui.prepare(this);super.onCreate(saved);Ui.bars(this);body=new LinearLayout(this);body.setOrientation(1);body.setPadding(Ui.dp(this,24),Ui.dp(this,16),Ui.dp(this,24),Ui.dp(this,16));Ui.backdrop(this,body);body.addView(Ui.label(this,Ui.word(this,"Уведомления","Notifications"),25));state=Ui.label(this,"",17);body.addView(state);
+        permission=button(Ui.word(this,"Разрешить доступ к уведомлениям","Allow notification access"),()->Notices.settings(this));body.addView(permission);
+        retry=button(Ui.word(this,"Подключить службу","Connect listener"),()->{Notices.reconnect(this);noticesChanged();});body.addView(retry);
+        list=new ListView(this);list.setSelector(Ui.selector(this));if(android.os.Build.VERSION.SDK_INT>=26)list.setDefaultFocusHighlightEnabled(false);list.setDividerHeight(Ui.dp(this,1));
+        adapter=new BaseAdapter(){public int getCount(){return entries.size();}public Object getItem(int p){return entries.get(p);}public long getItemId(int p){return p;}public View getView(int p,View old,ViewGroup parent){Notices.Entry entry=entries.get(p);LinearLayout row=new LinearLayout(NoticesActivity.this);row.setOrientation(1);row.setPadding(Ui.dp(NoticesActivity.this,12),Ui.dp(NoticesActivity.this,6),Ui.dp(NoticesActivity.this,12),Ui.dp(NoticesActivity.this,6));TextView name=Ui.label(NoticesActivity.this,label(entry.pkg),13);name.setTextColor(Ui.muted(NoticesActivity.this));row.addView(name);TextView title=Ui.label(NoticesActivity.this,entry.title.isEmpty()?label(entry.pkg):entry.title,19);title.setTypeface(Typeface.DEFAULT,Typeface.BOLD);title.setMaxLines(2);row.addView(title);if(!entry.text.isEmpty()){TextView text=Ui.label(NoticesActivity.this,entry.text,16);text.setMaxLines(2);text.setEllipsize(android.text.TextUtils.TruncateAt.END);row.addView(text);}return row;}};
+        list.setAdapter(adapter);list.setOnItemClickListener((p,v,pos,id)->detail(entries.get(pos)));body.addView(list,new LinearLayout.LayoutParams(-1,0,1));body.addView(button(Ui.word(this,"Закрыть","Close"),this::finish));setContentView(body);
+    }
+    private Button button(String title,Runnable action){Button b=Ui.tvButton(this,title);b.setOnClickListener(v->action.run());return b;}
+    private String label(String pkg){String value=labels.get(pkg);if(value==null){try{value=String.valueOf(getPackageManager().getApplicationLabel(getPackageManager().getApplicationInfo(pkg,0)));}catch(Exception unavailable){value=pkg;}labels.put(pkg,value);}return value;}
+    public void noticesChanged(){if(!visible)return;String key=list.getSelectedItemPosition()>=0&&list.getSelectedItemPosition()<entries.size()?entries.get(list.getSelectedItemPosition()).key:null;boolean access=Notices.granted(this),connected=Notices.connected(this);entries.clear();entries.addAll(Notices.snapshot(this));adapter.notifyDataSetChanged();permission.setVisibility(access?View.GONE:View.VISIBLE);retry.setVisibility(access&&!connected?View.VISIBLE:View.GONE);state.setText(!access?Ui.word(this,"Разрешите доступ в Android. Содержимое остаётся на устройстве; история не сохраняется.","Allow access in Android. Content stays on this device; no history is saved."):!connected?Ui.word(this,"Служба ещё не подключена.","The listener is not connected yet."):entries.isEmpty()?Ui.word(this,"Уведомлений нет","No notifications"):String.valueOf(entries.size()));if(key!=null)for(int i=0;i<entries.size();i++)if(key.equals(entries.get(i).key)){list.setSelection(i);break;}}
+    private void detail(Notices.Entry entry){Dialog dialog=new Dialog(this);dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);LinearLayout panel=new LinearLayout(this);panel.setOrientation(1);panel.setPadding(Ui.dp(this,16),Ui.dp(this,12),Ui.dp(this,16),Ui.dp(this,12));panel.setBackground(Ui.surface(this,Ui.panel(this),Ui.border(this),10));panel.addView(Ui.label(this,label(entry.pkg),17));TextView content=Ui.label(this,entry.title+(entry.text.isEmpty()?"":"\n\n"+entry.text),18);ScrollView scroll=new ScrollView(this);scroll.addView(content);panel.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
+        if(entry.intent!=null)panel.addView(button(Ui.word(this,"Открыть","Open"),()->{try{if(android.os.Build.VERSION.SDK_INT>=34){ActivityOptions options=ActivityOptions.makeBasic();options.setPendingIntentBackgroundActivityStartMode(ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED);entry.intent.send(this,0,null,null,null,null,options.toBundle());}else entry.intent.send();dialog.dismiss();}catch(PendingIntent.CanceledException|RuntimeException unavailable){Ui.toast(this,"Уведомление больше недоступно","This notification is no longer available");}}));
+        if(entry.clearable)panel.addView(button(Ui.word(this,"Убрать уведомление","Dismiss notification"),()->{Notices.dismiss(entry);dialog.dismiss();}));panel.addView(button(Ui.word(this,"Закрыть","Close"),dialog::dismiss));dialog.setContentView(panel);dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);dialog.show();dialog.getWindow().setLayout(Math.min(Ui.dp(this,650),getResources().getDisplayMetrics().widthPixels-Ui.dp(this,32)),Math.min(Ui.dp(this,460),getResources().getDisplayMetrics().heightPixels-Ui.dp(this,32)));
+    }
+    protected void onResume(){super.onResume();visible=true;Notices.listen(this);}
+    protected void onPause(){visible=false;Notices.unlisten(this);super.onPause();}
+}
