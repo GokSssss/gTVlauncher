@@ -1,0 +1,30 @@
+{
+  "repository": "GokSssss/gTVlauncher",
+  "tag": "v2.2.13",
+  "source_commit": "0f309da5f51f98ecd52d6061830912c7df83248e",
+  "release_id": 451291149,
+  "phone_version": "1.0.5",
+  "title": "True TV Launcher 2.2.13 \u2014 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f \u0438 \u043f\u0440\u0438\u0451\u043c \u043d\u0430 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0435",
+  "files": [
+    {
+      "name": "2.2.13-True-TV-Launcher.apk",
+      "size": 541325,
+      "sha256": "44072799e4f6eb41ea8846d65ebb19a50e03710a41fa5c458914c624defd9f2e"
+    },
+    {
+      "name": "2.2.13-True-TV-Launcher-SOURCE.zip",
+      "size": 12920652,
+      "sha256": "a812085d65ff97312ea7ab5b849310be18fac22b4f7128b7bc6448640a69f913"
+    },
+    {
+      "name": "2.2.13-True-TV-Launcher-Passport.txt",
+      "size": 11418,
+      "sha256": "69625ce84d2840b293fe4983e797aa4e871bacf003a43c89487eb4032cd9703a"
+    },
+    {
+      "name": "1.0.5-To-TV.apk",
+      "size": 115173,
+      "sha256": "a8d9eb47ce1af1bd238a72ed7ba07ea9633881b6227cdfbd45847116c5d8007f"
+    }
+  ]
+}

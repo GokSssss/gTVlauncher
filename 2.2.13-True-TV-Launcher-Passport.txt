@@ -1,0 +1,54 @@
+True TV Launcher2.2.13 / To TV1.0.5 — паспорт проверочного выпуска
+Дата:19.11.2026 UTC. Проект22.1, собственное приложение.
+Проект: https://drive.google.com/drive/folders/1HSemiU8S2f8ZPpVLLfJyvjLCbD7PATmn
+Папка выпуска: https://drive.google.com/drive/folders/1xBxoJBeiZMcNcEHDwV5GaYhruqEC2TNa
+TV APK: https://drive.google.com/file/d/1KDun1KONdbs8b8EM5Q3W5MEier3co-EL/view
+Phone APK: https://drive.google.com/file/d/1Sjc2mCkDWJrdKZpdVGQRfnEvQpDn67dL/view
+Единственный SOURCE: https://drive.google.com/file/d/158BDbCa9AGxJTfgYxif5Bedsd09_N18l/view
+SOURCE хранится в Ресурсы/Исходники, не копируется в папку выпуска.
+GitHub Release: https://github.com/GokSssss/gTVlauncher/releases/tag/v2.2.13
+GitHub TV APK: https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.13/2.2.13-True-TV-Launcher.apk
+GitHub Phone APK: https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.13/1.0.5-To-TV.apk
+GitHub SOURCE: https://github.com/GokSssss/gTVlauncher/releases/download/v2.2.13/2.2.13-True-TV-Launcher-SOURCE.zip
+GitHub: GokSssss/gTVlauncher; tagv2.2.13, releaseID451291149, pre-release.
+Source commit: 0f309da5f51f98ecd52d6061830912c7df83248e
+
+Что изменилось
+Круг непосредственно перед кнопкой питания показывает количество текущих уведомлений. При нуле пустой, без доступа/связи тире, больше99 —99+. Нажатие открывает список; можно открыть исходное приложение или убрать удаляемое уведомление. Групповые summaries не удваивают детей. Отдельный системный Notification access, без автоматического включения/root/ADB/A11y. В памяти только текущие строки/ключи/PendingIntent, без bitmap/RemoteViews/истории/записи на диск/сети. Обновление badge не пересоздаёт рабочий стол. Девять контролов сохраняют прежний бюджет ширины и размеры значков за счёт интервалов10dp.
+To TV теперь открывается на приём при обычном запуске. Android Поделиться→To TV сразу включает поиск/отправку. Общий ReceiveActivity/PublicDownloads/TextFiles выделен из собственного TV-приёма; TV сохраняет свои URI/файловый менеджер. На телефоне legacy Downloads имеют точный read-only provider grant,29+MediaStore. Файл/текст, подтверждение/авто-галочка, прогресс, Open/Show/Close, явные TXT и clipboard. Приём только в открытом окне, без доверенных списков, boot/фонового receiver или overlay. Начатая отправка по-прежнему использует foreground service.
+На Android14 PendingIntent открывается с публичным ActivityOptions opt-in только по явной кнопке Открыть.21–33 используют прежний send. Поддержка не ограничена Android9.
+
+Установка и проверка
+1. Обновить TV APK поверх True TV Launcher; отдельный To TV1.0.5 поверх телефонного To TV. Подпись/пакеты прежние; настройки не сбрасывать. Simple Launcher Reborn — отдельный пакет, не изменялся.
+2. Нажать круг перед питанием → Разрешить доступ к уведомлениям → включить True TV Launcher в системном списке. Это не служба специальных возможностей. Без доступа в круге тире.
+3. Проверить появление, открытие и удаление уведомления. Постоянное/неудаляемое уведомление не удаляется. Нулевой счётчик — пустой круг.
+4. Для приёма на ТВ — папка с плюсом и Wi-Fi; для приёма на телефоне — открыть To TV. Для отправки — Поделиться→To TV→получатель. Отправить два файла подряд, затем текст/ссылку; проверить clipboard и Сохранить в TXT.
+5. Закрыть окно получателя — приём завершается. Для следующего приёма снова открыть. При VPN разрешить LAN на обоих устройствах.
+6. To TV использует наш протокол; это не совместимость со сторонним Send Files To TV. При скрытом системном Notification access нужны возможности прошивки. Автоматических грантов нет.
+
+Бинарники и совместимость
+TV ru.truetv.launcher versionCode243/versionName2.2.13; phone ru.truetv.totv code105/name1.0.5. minSdk21, targetSdk34. Java/native Views, нет новых runtime зависимостей, .so или внешних шрифтов. Аудит TV:555 собственных классов.
+Подписи v1/v2 проверены одним прежним сертификатом SHA256 a5a632bd6a8b8e2c3e3623ee245c3a5c3652c0c6b32751a35a49d6a9c2e8fa33. Ключи/пароли не включены в APK/SOURCE/GitHub.
+2.2.13-True-TV-Launcher.apk
+541325 байт; SHA256 44072799e4f6eb41ea8846d65ebb19a50e03710a41fa5c458914c624defd9f2e
+
+1.0.5-To-TV.apk
+115173 байт; SHA256 a8d9eb47ce1af1bd238a72ed7ba07ea9633881b6227cdfbd45847116c5d8007f
+
+2.2.13-True-TV-Launcher-SOURCE.zip
+12920652 байт; SHA256 a812085d65ff97312ea7ab5b849310be18fac22b4f7128b7bc6448640a69f913
+
+Что реально проверено
+Android9/API28: Notices38 + TV files45 + TV text24 + Header29; phone receive30 + repeated Share35. Android14/API34: Notices38 + phone receive30 + TV files73 + TV text24. Всего366 native утверждений на disposable VM, включая настоящий NotificationManager/отдельный Probe UID, оригинальный PendingIntent, реальные действия detail Open/Dismiss, отзыв доступа, неизменные Board/tiles, обновление badge после смены сетки; TLS и public Downloads, MediaStore is_pending/URI grants/отказы/повторы/закрытие, точный Unicode/CRLF и явный TXT/clipboard. Установленные финальные TV/phone APK скачаны из API34 и побайтово совпали с файлами выпуска.
+Host:25 TLS/identity/stream/reject/cleanup +19 shared text +12 последовательных передач. Не являются физической парой устройств.
+SOURCE:627 входов SHA256 проверены; ZIP CRC цел. Чистая распаковка и сборка TV И phone с отдельно предоставленным прежним ключом/закреплёнными инструментами дали побайтово те же два APK. Один архив для Drive/GitHub, без .signing/.cache/build/artifacts/readback, docs/owner, частных references и внутреннего Drive ledger.
+Снимки — native PNG Android9 с синтетическими уведомлениями; на software display14 иногда null screenshot, это не выдаётся за готовый кадр. Первые отказы harness (самоотзыв разрешения, прежний Activity monitor, запрос Bluetooth, optional screenshot и race проверки UI до завершения Runnable) сохранены отдельно. Реальный API34 BAL_BLOCK открытия исправлен в runtime и подтверждён повтором. Не засчитываем промежуточные failed прогоны.
+Обе VM остановлены. API34 до/после listener/A11y null/0, Watchdog/font overrides null, Home stockQuickstep. На28 listener возвращён stockLauncher3, A11y null/0, Wi-Fi1/font1.0. После переустановок resolver28 потребовал явного возврата stockLauncher3; это сделано отдельным cleanup, тестовые READ/WRITE phone сняты после instrumentation. Запись окончательного cleanup позднее Source snapshot, архив ради неё не перепаковывается.
+Ограничения: физические Grundig/Beelink и все OEM не проверены этой сессией. Некоторые прошивки/политики скрывают выдачу доступа или отдельные уведомления. Нет обещания поддержки каждого VPN/OEM, Reply actions, истории уведомлений или постоянного фонового приёма.
+
+Происхождение и восстановление
+Собственная реализация по поведению владельца, не перенос исходников Simple Launcher/Send Files To TV. Подробнее docs/PROVENANCE.md в SOURCE. Никакой формальной юридической сертификации clean-room не заявлено.
+Сборка: python3 tools/build.py и python3 tools/build-phone.py. Инструкция docs/BUILD_AND_SIGNING.md. Применяемый прежний ключ и реальные параметры доступны владельцу отдельно: https://drive.google.com/drive/folders/1oBrhp7hFTO7c5bMW0qmCwBFj4-MBfeCo . В публичных материалах нет значений паролей/ключа.
+Предыдущий полный2.2.12 + To TV1.0.4: https://drive.google.com/drive/folders/18i7NA3bz4BZfCXxtKjiskUZ-43KY-_i4 ; его SOURCE https://drive.google.com/file/d/1DBaXdyQnrMoZ0naenvJTOva8XMgOw54F/view . Откат на меньший versionCode может потребовать удаления/потери настроек; автоматическая миграция не обещается.
+Выбранный2.1.5: https://drive.google.com/drive/folders/1O5BxfKZiYhh64xa2E5fgsMYoFDmm3vr1 — только сравнение до216, со слов владельца добавление также не работает; не стабильный резерв. Сохраняются243/242/215; старый неключевой241 очищается лишь после проверки нового и выдачи ссылок.
+Поздние URL/итог хранения — в живых документах по прежним ID. Готовые APK/SOURCE и тег не подменять; на Drive и GitHub одинаковые четыре файла: два APK, SOURCE и этот паспорт.
